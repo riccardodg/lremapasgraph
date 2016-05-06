@@ -32,8 +32,25 @@ public class Select2Prepare {
     public static final String __SELECTLISTOFTYPES__ = " SELECT distinct type  as type "
             + "FROM "+__TAB_R_A__+__ORDERBY1ASC__;
     
-    // create the list of families (fname lname) 
+    // create the list of families 
     public static final String __SELECTLISTOFFAMILIES__ = " SELECT distinct family  as family "
             + "FROM "+__TABFAMILIES__+__ORDERBY1ASC__;
+    
+    
+    // create the list of years 
+    public static final String __SELECTLISTOFYEARS__ = " SELECT distinct year  as year "
+            + "FROM "+__TAB_R_A__+__ORDERBY1ASC__;
+   
+    // create the list of confs 
+    public static final String __SELECTLISTOFCONFS__ = " SELECT distinct conf  as year "
+            + "FROM "+__TAB_R_A__+__ORDERBY1ASC__;
+    
+    
+    // create the list of confs and years (conf (year))
+    public static final String __SELECTLISTOFCONFS_YEARS__ = " SELECT distinct concat(conf,' (',year,')')  as conf_year "
+            + "FROM "+__TAB_R_A__+__ORDERBY1ASC__;
+    
+    
+   
    
 }

@@ -11,6 +11,7 @@ package it.cnr.ilc.lremapasgraph.db;
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -48,7 +49,7 @@ public class DbConnect {
         return conn;
     }
     
-    public int execStm(Connection conn, String stm){
+    public static int execStm(Connection conn, String stm){
         Statement statement = null;
         try {
             
@@ -64,6 +65,25 @@ public class DbConnect {
         }
     
         return 0;
+    }
+    
+    public static ResultSet execStmAndGetResultSet(Connection conn, String stm){
+        Statement statement = null;
+        ResultSet res=null;
+        try {
+            
+            statement = conn.createStatement();
+            // Result set get the result of the SQL query
+            res=statement
+                    .executeQuery(stm);
+            
+
+        } catch (Exception e) {
+            return null;
+           
+        }
+    
+        return res;
     }
     
 

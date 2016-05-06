@@ -4,48 +4,91 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
+    <h:form>
+        <f:view contentType="text/html">
+            <h:head>
+                <f:facet name="first">
+                    <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                    <title>PrimeFaces</title>
+                </f:facet>
+            </h:head>
 
-    <f:view contentType="text/html">
-        <h:head>
-            <f:facet name="first">
-                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>PrimeFaces</title>
-            </f:facet>
-        </h:head>
+            <h:body>
 
-        <h:body>
+                <p:layout fullPage="true">
 
-            <p:layout fullPage="true">
+                    <p:layoutUnit position="north" size="200" resizable="true" closable="true" collapsible="true" >
+                        <p>Filter parameters:</p>
+                        <h:panelGrid columns="4" cellpadding="5" id="display">
+                            <p:outputLabel value="Author:" for="selAuthor" />
+                            <p:inputText value="#{lremapasgraphManagedBeanView.author}" readonly="true" id="selAuthor"/>
+                            <p:outputLabel value="Family:" for="selFamily" />
+                            <p:inputText value="#{lremapasgraphManagedBeanView.family}" readonly="true" id="selFamily"/>
+                            <p:outputLabel value="Type" for="selType" />
+                            <p:inputText value="#{lremapasgraphManagedBeanView.type}" readonly="true" id="selType"/>
+                            <p:outputLabel value="Conference (year)" for="selCy" />
+                            <p:inputText value="#{lremapasgraphManagedBeanView.conf_year}" readonly="true" id="selCy"/>
+                            
+                        </h:panelGrid>
+                    </p:layoutUnit>
 
-                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    Insert here the parameters
-                </p:layoutUnit>
+                    <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                        Footer
+                    </p:layoutUnit>
 
-                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                    Footer
-                </p:layoutUnit>
+                    <p:layoutUnit position="west" size="450" header="Filter parameters" collapsible="true">
+                        <h:panelGrid columns="2" cellpadding="5">
 
-                <p:layoutUnit position="west" size="175" header="Filter parameters" collapsible="true">
-                    <p:menu>
-                        <p:submenu label="Resources">
-                            <p:menuitem value="Year" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Author" url="http://www.primefaces.org/documentation.html" />
-                            <p:menuitem value="Type" url="http://forum.primefaces.org/" />
-                            <p:menuitem value="Family" url="http://www.primefaces.org/themes.html" />
 
-                        </p:submenu>
+                            <p:outputLabel value="Author:" for="acAuthor" />
+                            <p:autoComplete id="acAuthor" value="#{lremapasgraphManagedBeanView.author}"  
+                                            style="width:320px" 
+                                            completeMethod="#{lremapasgraphManagedBeanView.completeAuthors}" 
+                                            minQueryLength="3" 
+                                            autocomplete="true" forceSelection="true" size="30"
+                                            placeholder='Type 3 chars to start autocompletion'/>
+                            <p:separator></p:separator><p:separator></p:separator>
+                            <p:outputLabel for="acFamily" value="Family:" />
 
-                    </p:menu>
-                </p:layoutUnit>
 
-                <p:layoutUnit position="center">
-                     <iframe src="http://www.w3schools.com"></iframe> 
-                </p:layoutUnit>
+                            <p:selectOneMenu id="acFamily" value="#{lremapasgraphManagedBeanView.family}" style="width:320px" filter="true" filterMatchMode="contains" >
+                                <f:selectItem itemLabel="Select a Family" itemValue="" noSelectionOption="true" />
+                                <f:selectItems value="#{lremapasgraphManagedBeanView.families}" />
+                            </p:selectOneMenu>
 
-            </p:layout>
+                            <p:separator></p:separator><p:separator></p:separator>
+                            <p:outputLabel for="acType" value="Type:" />
 
-        </h:body>
 
-    </f:view>
+                            <p:selectOneMenu id="acType" value="#{lremapasgraphManagedBeanView.type}" style="width:320px" filter="true" filterMatchMode="contains" >
+                                <f:selectItem itemLabel="Select a Type" itemValue="" noSelectionOption="true" />
+                                <f:selectItems value="#{lremapasgraphManagedBeanView.types}" />
+                            </p:selectOneMenu>
+
+                            <p:separator></p:separator><p:separator></p:separator>
+                            <p:outputLabel for="acCy" value="Conference (year):" />
+
+
+                            <p:selectOneMenu id="acCy" value="#{lremapasgraphManagedBeanView.conf_year}" style="width:320px" filter="true" filterMatchMode="contains" >
+                                <f:selectItem itemLabel="Select a Type" itemValue="" noSelectionOption="true" />
+                                <f:selectItems value="#{lremapasgraphManagedBeanView.confs_years}" />
+                            </p:selectOneMenu>
+                        </h:panelGrid>
+                        <p:separator />
+
+                        <p:commandButton value="Submit" update="display"  icon="ui-icon-check" />
+
+                    </p:layoutUnit>
+
+                    <p:layoutUnit position="center">
+                        <iframe src="http://www.w3schools.com"></iframe> 
+                    </p:layoutUnit>
+
+                </p:layout>
+
+            </h:body>
+
+        </f:view>
+    </h:form>
 </html>
 
