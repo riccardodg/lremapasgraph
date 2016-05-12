@@ -9,8 +9,10 @@ import com.google.common.base.Predicates;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
 import it.cnr.ilc.lremapasgraph.db.DbConnect;
+import it.cnr.ilc.lremapasgraph.db.Vars;
+import it.cnr.ilc.lremapasgraph.io.LreMapAsGraphFileWriter;
 import it.cnr.ilc.lremapasgraph.services.LremapasgraphService;
-import java.io.Serializable;
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +35,18 @@ public class LremapasgraphManagedBeanView {
     private List<String> families = new ArrayList<String>();
     private List<String> authors = new ArrayList<String>();
     private List<String> years = new ArrayList<String>();
+    private List<String> resourcenames = new ArrayList<String>();
     private List<String> confs = new ArrayList<String>();
     private List<String> confs_years = new ArrayList<String>();
-    
+
+    //files
+    private List<String> file_distinct_authors_arg1 = new ArrayList<String>();
+    private List<String> file_distinct_affiliations_arg2 = new ArrayList<String>();
+    private List<String> file_size_affiliations_arg3 = new ArrayList<String>();
+    private List<String> file_distinct_resources_arg4 = new ArrayList<String>();
+    private List<String> file_distinct_a2avr_arg5 = new ArrayList<String>();
+    private List<String> file_shared_resources_arg6 = new ArrayList<String>();
+
     private String name;
     private String type;
     private String family;
@@ -43,43 +54,145 @@ public class LremapasgraphManagedBeanView {
     private String year;
     private String conf;
     private String conf_year;
-    
+    private String vis = "a2avr";
+    private String theLog = "";
+    private String theLog4File = "";
+
     // connection
     Connection conn;
-    DbConnect dbconnect=new DbConnect();
-    
+    DbConnect dbconnect = new DbConnect();
+
     @ManagedProperty("#{lremapasgraphService}")
     private LremapasgraphService service;
-    
+
     @PostConstruct
     public void init() {
-        if (conn == null)
-            conn=dbconnect.db_connect();
-        //setResNorm(service.getListOfNormResources());
+        if (conn == null) {
+            conn = dbconnect.db_connect();
+        }
         service.setConn(conn);
         setAuthors(service.getAuthors());
         setFamilies(service.getFamilies());
         setTypes(service.getTypes());
         setConfs_years(service.getConfs_years());
-        
-        //System.out.println("A "+authors);
-        
+        setResourcenames(service.getResourcenames());
 
     }
-    
+
+    public void filterAndSearch() {
+        boolean retfile = false;
+        // clear log
+        theLog = "";
+        theLog4File="";
+        if ("a2avr".equals(vis)) {
+
+            file_distinct_authors_arg1 = getFile_distinct_authors_arg1();
+            theLog = getTheLog() + "\nfilterAndSearch: getFile_distinct_authors_arg1() with year -" + getYear() + "- (" + file_distinct_authors_arg1.size() + ")";
+
+            file_distinct_affiliations_arg2 = getFile_distinct_affiliations_arg2();
+            theLog = getTheLog() + "\nfilterAndSearch: getFile_distinct_affiliations_arg2() with year -" + getYear() + "- (" + file_distinct_affiliations_arg2.size() + ")";
+
+            file_size_affiliations_arg3 = getFile_size_affiliations_arg3();
+            theLog = getTheLog() + "\nfilterAndSearch: getFile_size_affiliations_arg3() with year -" + getYear() + "- (" + file_size_affiliations_arg3.size() + ")";
+
+            file_distinct_resources_arg4 = getFile_distinct_resources_arg4();
+            theLog = getTheLog() + "\nfilterAndSearch: getFile_distinct_resources_arg4() with year -" + getYear() + "- (" + file_distinct_resources_arg4.size() + ")";
+
+            file_distinct_a2avr_arg5 = getFile_distinct_a2avr_arg5();
+            theLog = getTheLog() + "\nfilterAndSearch: getFile_distinct_a2avr_arg5() with year -" + getYear() + "- (" + file_distinct_a2avr_arg5.size() + ")";
+
+            file_shared_resources_arg6 = getFile_shared_resources_arg6();
+            theLog = getTheLog() + "\nfilterAndSearch: getFile_shared_resources_arg6() with year -" + getYear() + "- (" + file_shared_resources_arg6.size() + ")";
+            
+            theLog = getTheLog() + "\n--\n";
+
+            //setTheLog(theLog);
+            try {
+                retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG1__, file_distinct_authors_arg1);
+                theLog4File = getTheLog4File()+ "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG1__ + "- " + retfile;
+
+            } catch (IOException ioe) {
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG1__ + " -" + ioe.getMessage()+ "- "+retfile;
+
+            }
+
+            try {
+                retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG2__, file_distinct_affiliations_arg2);
+                theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG2__ + "- " + retfile;
+
+            } catch (IOException ioe) {
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG2__ + " -" + ioe.getMessage()+ "- "+retfile;
+
+            }
+
+            try {
+                retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG3__, file_size_affiliations_arg3);
+                theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG3__ + "- " + retfile;
+
+            } catch (IOException ioe) {
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG3__ + " -" + ioe.getMessage()+ "- "+retfile;
+
+            }
+
+            try {
+                retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG4__, file_distinct_resources_arg4);
+                theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG4__ + "- " + retfile;
+
+            } catch (IOException ioe) {
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG4__ + " -" + ioe.getMessage()+ "- "+retfile;
+
+            }
+            
+            try {
+                retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG5__, file_distinct_a2avr_arg5);
+                theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG5__ + "- " + retfile;
+
+            } catch (IOException ioe) {
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG5__ + " -" + ioe.getMessage()+ "- "+retfile;
+
+            }
+            
+            try {
+                retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG6__, file_shared_resources_arg6);
+                theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG6__ + "- " + retfile;
+
+            } catch (IOException ioe) {
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG6__ + " -" + ioe.getMessage()+ "- "+retfile;
+
+            }
+
+        }
+        if ("r2rva".equals(vis)) {
+        }
+    }
+
+    public boolean CreateAndWriteFile(String filename, List<String> list) throws IOException {
+        boolean completefilename = true;
+        completefilename = LreMapAsGraphFileWriter.CreateAndWriteFile(filename, list);
+
+        return completefilename;
+    }
+
     public List<String> completeText(String query) {
         List<String> results = new ArrayList<String>();
-        for(int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             results.add(query + i);
         }
-         
+
         return results;
     }
-    
+
     public List<String> completeAuthors(String query) {
         List<String> results = Lists.newArrayList(Collections2.filter(
                 getAuthors(), Predicates.containsPattern(query)));
-        
+
+        return results;
+    }
+    
+    public List<String> completeNames(String query) {
+        List<String> results = Lists.newArrayList(Collections2.filter(
+                getResourcenames(), Predicates.containsPattern(query)));
+
         return results;
     }
 
@@ -284,6 +397,197 @@ public class LremapasgraphManagedBeanView {
      */
     public void setService(LremapasgraphService service) {
         this.service = service;
+    }
+
+    /**
+     * @return the vis
+     */
+    public String getVis() {
+        return vis;
+    }
+
+    /**
+     * @param vis the vis to set
+     */
+    public void setVis(String vis) {
+        this.vis = vis;
+    }
+
+    /**
+     * @return the file_arg1
+     */
+    public List<String> getFile_distinct_authors_arg1() {
+        String year = "", conf = "";
+        String confYear = getConf_year();
+        
+
+        confYear = confYear.replace(" (", "-").replace(")", "");
+        //
+        if (!"".equals(confYear)) {
+            String[] temp = confYear.split("-");
+            if (temp.length > 0) {
+                conf = temp[0].trim();
+                year = temp[1].trim();
+            }
+            //file_distinct_authors_arg1 = service.getFile_arg1(year);
+        } 
+        file_distinct_authors_arg1=service.getFile_arg1(year, author, type, family, name);
+
+        setYear(year);
+        setConf(conf);
+
+        return file_distinct_authors_arg1;
+    }
+
+    /**
+     * @param file_distinct_authors_arg1 the file_arg1 to set
+     */
+    public void setFile_distinct_authors_arg1(List<String> file_distinct_authors_arg1) {
+        this.file_distinct_authors_arg1 = file_distinct_authors_arg1;
+    }
+
+    /**
+     * @return the theLog
+     */
+    public String getTheLog() {
+
+        return theLog;
+    }
+
+    /**
+     * @param theLog the theLog to set
+     */
+    public void setTheLog(String theLog) {
+
+        String oldLog = getTheLog();
+        theLog = oldLog + "\n" + theLog;
+        this.theLog = theLog;
+        System.err.println("theLog " + theLog);
+
+    }
+
+    /**
+     * @return the file_distinct_affiliations_arg2
+     */
+    public List<String> getFile_distinct_affiliations_arg2() {
+        String year = "", conf = "";
+        year = getYear();
+        conf = getConf();
+        file_distinct_affiliations_arg2 = service.getFile_arg2(year);
+        
+        return file_distinct_affiliations_arg2;
+    }
+
+    /**
+     * @param file_distinct_affiliations_arg2 the
+     * file_distinct_affiliations_arg2 to set
+     */
+    public void setFile_distinct_affiliations_arg2(List<String> file_distinct_affiliations_arg2) {
+        this.file_distinct_affiliations_arg2 = file_distinct_affiliations_arg2;
+    }
+
+    /**
+     * @return the file_size_affiliations_arg3
+     */
+    public List<String> getFile_size_affiliations_arg3() {
+        String year = "", conf = "";
+        year = getYear();
+        conf = getConf();
+        file_size_affiliations_arg3=service.getFile_arg3(year, author, type, family, name);
+        
+
+        return file_size_affiliations_arg3;
+    }
+
+    /**
+     * @param file_size_affiliations_arg3 the file_size_affiliations_arg3 to set
+     */
+    public void setFile_size_affiliations_arg3(List<String> file_size_affiliations_arg3) {
+        this.file_size_affiliations_arg3 = file_size_affiliations_arg3;
+    }
+
+    /**
+     * @return the file_distinct_resources_arg4
+     */
+    public List<String> getFile_distinct_resources_arg4() {
+        String year = "", conf = "";
+        year = getYear();
+        conf = getConf();
+        file_distinct_resources_arg4 = service.getFile_arg4(year, author, type, family,name);
+      
+        return file_distinct_resources_arg4;
+    }
+
+    /**
+     * @param file_distinct_resources_arg4 the file_distinct_resources_arg4 to
+     * set
+     */
+    public void setFile_distinct_resources_arg4(List<String> file_distinct_resources_arg4) {
+        this.file_distinct_resources_arg4 = file_distinct_resources_arg4;
+    }
+
+    /**
+     * @return the file_distinct_resources_arg5
+     */
+    public List<String> getFile_distinct_a2avr_arg5() {
+        String year = "", conf = "";
+        year = getYear();
+        conf = getConf();
+        file_distinct_a2avr_arg5 = service.getFile_arg5(year, author, type, family,name);
+        return file_distinct_a2avr_arg5;
+    }
+
+    /**
+     * @param file_distinct_a2avr_arg5 the file_distinct_resources_arg5 to set
+     */
+    public void setFile_distinct_a2avr_arg5(List<String> file_distinct_a2avr_arg5) {
+        this.file_distinct_a2avr_arg5 = file_distinct_a2avr_arg5;
+    }
+
+    /**
+     * @return the file_shared_resources_arg6
+     */
+    public List<String> getFile_shared_resources_arg6() {
+        String year = "", conf = "";
+        year = getYear();
+        conf = getConf();
+        file_shared_resources_arg6 = service.getFile_arg6(year, author, type, family,name);
+        return file_shared_resources_arg6;
+    }
+
+    /**
+     * @param file_shared_resources_arg6 the file_shared_resources_arg6 to set
+     */
+    public void setFile_shared_resources_arg6(List<String> file_shared_resources_arg6) {
+        this.file_shared_resources_arg6 = file_shared_resources_arg6;
+    }
+
+    /**
+     * @return the resourcenames
+     */
+    public List<String> getResourcenames() {
+        return resourcenames;
+    }
+
+    /**
+     * @param resourcenames the resourcenames to set
+     */
+    public void setResourcenames(List<String> resourcenames) {
+        this.resourcenames = resourcenames;
+    }
+
+    /**
+     * @return the theLog4File
+     */
+    public String getTheLog4File() {
+        return theLog4File;
+    }
+
+    /**
+     * @param theLog4File the theLog4File to set
+     */
+    public void setTheLog4File(String theLog4File) {
+        this.theLog4File = theLog4File;
     }
 
 }

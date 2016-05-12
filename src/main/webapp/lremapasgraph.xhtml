@@ -9,7 +9,7 @@
             <h:head>
                 <f:facet name="first">
                     <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                    <title>PrimeFaces</title>
+                    <title>LremapAsGraph</title>
                 </f:facet>
             </h:head>
 
@@ -17,23 +17,34 @@
 
                 <p:layout fullPage="true">
 
-                    <p:layoutUnit position="north" size="200" resizable="true" closable="true" collapsible="true" >
-                        <p>Filter parameters:</p>
-                        <h:panelGrid columns="4" cellpadding="5" id="display">
+                    <p:layoutUnit position="north" size="180" resizable="true" closable="true" collapsible="true" >
+                        <!--                        <p>Filter parameters:</p>-->
+                        <h:panelGrid columns="10" cellpadding="5" id="display">
                             <p:outputLabel value="Author:" for="selAuthor" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.author}" readonly="true" id="selAuthor"/>
+                            <p:outputLabel value="Resource:" for="selName" />
+                            <p:inputText value="#{lremapasgraphManagedBeanView.name}" readonly="true" id="selName"/>
                             <p:outputLabel value="Family:" for="selFamily" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.family}" readonly="true" id="selFamily"/>
-                            <p:outputLabel value="Type" for="selType" />
+                            <p:outputLabel value="Type:" for="selType" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.type}" readonly="true" id="selType"/>
-                            <p:outputLabel value="Conference (year)" for="selCy" />
+                            <p:outputLabel value="Conference (year):" for="selCy" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.conf_year}" readonly="true" id="selCy"/>
 
                         </h:panelGrid>
+                        <p:separator></p:separator>
+                        <h:panelGrid columns="4" cellpadding="5" id="log">
+                            <p:outputLabel value="Data log:" for="tLog" />
+                            <p:inputTextarea id="tLog" rows="3" cols="75" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog}"/>
+                            <p:outputLabel value="File log:" for="fLog" />
+                            <p:inputTextarea id="fLog" rows="3" cols="75" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4File}"/>
+                        </h:panelGrid>
+                        
+
                     </p:layoutUnit>
 
-                    <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                        Footer
+                    <p:layoutUnit position="south" size="50" closable="true" collapsible="true">
+                        
                     </p:layoutUnit>
 
                     <p:layoutUnit position="west" size="450" header="Filter parameters" collapsible="true">
@@ -52,6 +63,15 @@
                             <p:autoComplete id="acAuthor" value="#{lremapasgraphManagedBeanView.author}"  
                                             style="width:320px" 
                                             completeMethod="#{lremapasgraphManagedBeanView.completeAuthors}" 
+                                            minQueryLength="3" 
+                                            autocomplete="true" forceSelection="true" size="30"
+                                            placeholder='Type 3 chars to start autocompletion'/>
+                            <p:separator></p:separator><p:separator></p:separator>
+                            
+                            <p:outputLabel value="Resource:" for="acName" />
+                            <p:autoComplete id="acName" value="#{lremapasgraphManagedBeanView.name}"  
+                                            style="width:320px" 
+                                            completeMethod="#{lremapasgraphManagedBeanView.completeNames}" 
                                             minQueryLength="3" 
                                             autocomplete="true" forceSelection="true" size="30"
                                             placeholder='Type 3 chars to start autocompletion'/>
@@ -84,12 +104,12 @@
                         </h:panelGrid>
                         <p:separator />
 
-                        <p:commandButton value="Submit" update="display"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}"/>
+                        <p:commandButton value="Submit" update="display tLog fLog"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}"/>
 
                     </p:layoutUnit>
 
                     <p:layoutUnit position="center">
-                        <iframe src="http://localhost/clic/a2avr_lrec_2010_selected.html" width="100%" height="100%"></iframe> 
+                        <iframe src="http://localhost/clic/a2avr_demo.html" width="100%" height="100%"></iframe> 
                     </p:layoutUnit>
 
                 </p:layout>

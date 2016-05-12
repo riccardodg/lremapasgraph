@@ -13,6 +13,7 @@ public class Select2Prepare {
 
     // tables
     public static final String __TAB_R_A__ = "resources_authors ";
+    public static final String __TABA2AVR__ = "a2avr A ";
     public static final String __TABFAMILIES__ = "families ";
     public static final String __TABAFFI1__ = "affiliation AF1 ";
     public static final String __TABAFFI2__ = "affiliation AF2 ";
@@ -50,7 +51,12 @@ public class Select2Prepare {
     public static final String __SELECTLISTOFCONFS_YEARS__ = " SELECT distinct concat(conf,' (',year,')')  as conf_year "
             + "FROM "+__TAB_R_A__+__ORDERBY1ASC__;
     
+    // create a list of resourcenames
+//    public static final String __SELECTLISTOFRESOURCES__ = " SELECT distinct A.name as resname "
+//            + "FROM "+__TAB_R_A__+" A "+__ORDERBY1ASC__;
     
+    public static final String __SELECTLISTOFRESOURCES__ = " SELECT distinct A.resourcename as resname "
+            + "FROM "+__TABA2AVR__+__ORDERBY1ASC__;
    
    
 }
