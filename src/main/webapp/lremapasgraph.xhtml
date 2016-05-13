@@ -33,18 +33,21 @@
 
                         </h:panelGrid>
                         <p:separator></p:separator>
-                        <h:panelGrid columns="4" cellpadding="5" id="log">
+                        <h:panelGrid columns="6" cellpadding="2" id="log">
                             <p:outputLabel value="Data log:" for="tLog" />
-                            <p:inputTextarea id="tLog" rows="3" cols="75" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog}"/>
+                            <p:inputTextarea id="tLog" rows="3" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog}"/>
                             <p:outputLabel value="File log:" for="fLog" />
-                            <p:inputTextarea id="fLog" rows="3" cols="75" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4File}"/>
+                            <p:inputTextarea id="fLog" rows="3" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4File}"/>
+                            <p:outputLabel value="Structure log:" for="sLog" />
+                            <p:inputTextarea id="sLog" rows="3" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4Structure}"/>
+
                         </h:panelGrid>
-                        
+
 
                     </p:layoutUnit>
 
                     <p:layoutUnit position="south" size="50" closable="true" collapsible="true">
-                        
+
                     </p:layoutUnit>
 
                     <p:layoutUnit position="west" size="450" header="Filter parameters" collapsible="true">
@@ -67,7 +70,7 @@
                                             autocomplete="true" forceSelection="true" size="30"
                                             placeholder='Type 3 chars to start autocompletion'/>
                             <p:separator></p:separator><p:separator></p:separator>
-                            
+
                             <p:outputLabel value="Resource:" for="acName" />
                             <p:autoComplete id="acName" value="#{lremapasgraphManagedBeanView.name}"  
                                             style="width:320px" 
@@ -104,12 +107,18 @@
                         </h:panelGrid>
                         <p:separator />
 
-                        <p:commandButton value="Submit" update="display tLog fLog"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}"/>
+                        <p:commandButton onstart="PF('loadingDialog').show()" value="Submit" update="display tLog fLog sLog"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}" oncomplete="
+
+                                         var iframe = document.getElementById('graph');
+                                         iframe.src = iframe.src;
+                                         PF('loadingDialog').hide();
+                                         
+                                         "/>
 
                     </p:layoutUnit>
 
-                    <p:layoutUnit position="center">
-                        <iframe src="http://localhost/clic/a2avr_demo.html" width="100%" height="100%"></iframe> 
+                    <p:layoutUnit position="center" >
+                        <iframe src="http://localhost/clic/sxo.html" width="100%" height="100%" id="graph"></iframe> 
                     </p:layoutUnit>
 
                 </p:layout>
@@ -118,5 +127,9 @@
 
         </f:view>
     </h:form>
+     <p:dialog widgetVar="loadingDialog" styleClass="loadingDialog" modal="true" closable="false" resizable="false">
+        <p:outputLabel styleClass="loadingLabel" value="Loading"/>
+        <p:graphicImage styleClass="loadingImage" name="waiting.gif"/>
+    </p:dialog>
 </html>
 

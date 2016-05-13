@@ -202,40 +202,40 @@ public class LremapasgraphService implements Serializable {
             execp2 = Select2Exec.__SELECTARG1_DISTAUTH_PART2_BASE__;
         } else {
             execp1 = Select2Exec.__SELECTARG1_DISTAUTH_PART1_FAM__;
-            execp1 = execp1 + " AND C.family='%s'";
+            execp1 = execp1 + " AND C.family=\"%s\"";
             execp1 = String.format(execp1, family);
 
             execp2 = Select2Exec.__SELECTARG1_DISTAUTH_PART2_FAM__;
-            execp2 = execp2 + " AND C.family='%s'";
+            execp2 = execp2 + " AND C.family=\"%s\"";
             execp2 = String.format(execp2, family);
         }
         if (!"".equals(author)) {
-            execp1 = execp1 + " AND A.author_1='%s'";
+            execp1 = execp1 + " AND A.author_1=\"%s\"";
             execp1 = String.format(execp1, author);
-            execp2 = execp2 + " AND A.author_2='%s'";
+            execp2 = execp2 + " AND A.author_2=\"%s\"";
             execp2 = String.format(execp2, author);
         }
         if (!"".equals(year)) {
-            execp1 = execp1 + " AND A.YEAR_1='%s'";
+            execp1 = execp1 + " AND A.YEAR_1=\"%s\"";
             execp1 = String.format(execp1, year);
 
-            execp2 = execp2 + " AND A.YEAR_2='%s'";
+            execp2 = execp2 + " AND A.YEAR_2=\"%s\"";
             execp2 = String.format(execp2, year);
         }
 
         if (!"".equals(type)) {
-            execp1 = execp1 + " AND A.resourcetype='%s'";
+            execp1 = execp1 + " AND A.resourcetype=\"%s\"";
             execp1 = String.format(execp1, type);
 
-            execp2 = execp2 + " AND A.resourcetype='%s'";
+            execp2 = execp2 + " AND A.resourcetype=\"%s\"";
             execp2 = String.format(execp2, type);
         }
 
         if (!"".equals(name)) {
-            execp1 = execp1 + " AND A.resourcename='%s'";
+            execp1 = execp1 + " AND A.resourcename=\"%s\"";
             execp1 = String.format(execp1, name);
 
-            execp2 = execp2 + " AND A.resourcename='%s'";
+            execp2 = execp2 + " AND A.resourcename=\"%s\"";
             execp2 = String.format(execp2, name);
         }
         exec = execp1 + Vars.__UNION__ + execp2 + Vars.__ORDERBYAFFI__;
@@ -261,7 +261,7 @@ public class LremapasgraphService implements Serializable {
         getFile_arg2().clear();
         String exec = Select2Exec.__SELECTARG2_DISTAFFI__;
         if (!"".equals(year)) {
-            exec = exec + " WHERE YEAR='%s';";
+            exec = exec + " WHERE YEAR=\"%s\"";
             exec = String.format(exec, year);
         }
         System.err.println("ARG2 - " + exec);
@@ -296,39 +296,39 @@ public class LremapasgraphService implements Serializable {
             execp2 = Select2Exec.__SELECTARG3_SIZE_AFFI_PART2_BASE__;
         } else {
             execp1 = Select2Exec.__SELECTARG3_SIZE_AFFI_PART1_FAM__;
-            execp1 = execp1 + " AND C.family='%s'";
+            execp1 = execp1 + " AND C.family=\"%s\"";
             execp1 = String.format(execp1, family);
 
             execp2 = Select2Exec.__SELECTARG3_SIZE_AFFI_PART2_FAM__;
-            execp2 = execp2 + " AND C.family='%s'";
+            execp2 = execp2 + " AND C.family=\"%s\"";
             execp2 = String.format(execp2, family);
         }
         if (!"".equals(author)) {
-            execp1 = execp1 + " AND A.author_1='%s'";
+            execp1 = execp1 + " AND A.author_1=\"%s\"";
             execp1 = String.format(execp1, author);
-            execp2 = execp2 + " AND A.author_2='%s'";
+            execp2 = execp2 + " AND A.author_2=\"%s\"";
             execp2 = String.format(execp2, author);
         }
         if (!"".equals(year)) {
-            execp1 = execp1 + " AND A.YEAR_1='%s'";
+            execp1 = execp1 + " AND A.YEAR_1=\"%s\"";
             execp1 = String.format(execp1, year);
 
-            execp2 = execp2 + " AND A.YEAR_2='%s'";
+            execp2 = execp2 + " AND A.YEAR_2=\"%s\"";
             execp2 = String.format(execp2, year);
         }
 
         if (!"".equals(type)) {
-            execp1 = execp1 + " AND A.resourcetype='%s'";
+            execp1 = execp1 + " AND A.resourcetype=\"%s\"";
             execp1 = String.format(execp1, type);
 
-            execp2 = execp2 + " AND A.resourcetype='%s'";
+            execp2 = execp2 + " AND A.resourcetype=\"%s\"";
             execp2 = String.format(execp2, type);
         }
         if (!"".equals(name)) {
-            execp1 = execp1 + " AND A.resourcename='%s'";
+            execp1 = execp1 + " AND A.resourcename=\"%s\"";
             execp1 = String.format(execp1, name);
 
-            execp2 = execp2 + " AND A.resourcename='%s'";
+            execp2 = execp2 + " AND A.resourcename=\"%s\"";
             execp2 = String.format(execp2, name);
         }
         exec = execp1 + Vars.__UNION__ + execp2 + Vars.__ORDERBYCOUNTARG3__;
@@ -364,39 +364,39 @@ public class LremapasgraphService implements Serializable {
             execp2 = Select2Exec.__SELECTARG4_DISTINCTRES_BASE_P2__;
         } else {
             execp1 = Select2Exec.__SELECTARG4_DISTINCTRES_FAM_P1__;
-            execp1 = execp1 + " AND C.family='%s'";
+            execp1 = execp1 + " AND C.family=\"%s\"";
             execp1 = String.format(execp1, family);
 
             execp2 = Select2Exec.__SELECTARG4_DISTINCTRES_FAM_P2__;
-            execp2 = execp2 + " AND C.family='%s'";
+            execp2 = execp2 + " AND C.family=\"%s\"";
             execp2 = String.format(execp2, family);
         }
         if (!"".equals(author)) {
-            execp1 = execp1 + " AND A.author_1='%s'";
+            execp1 = execp1 + " AND A.author_1=\"%s\"";
             execp1 = String.format(execp1, author);
-            execp2 = execp2 + " AND A.author_2='%s'";
+            execp2 = execp2 + " AND A.author_2=\"%s\"";
             execp2 = String.format(execp2, author);
         }
         if (!"".equals(year)) {
-            execp1 = execp1 + " AND A.YEAR_1='%s'";
+            execp1 = execp1 + " AND A.YEAR_1=\"%s\"";
             execp1 = String.format(execp1, year);
 
-            execp2 = execp2 + " AND A.YEAR_2='%s'";
+            execp2 = execp2 + " AND A.YEAR_2=\"%s\"";
             execp2 = String.format(execp2, year);
         }
 
         if (!"".equals(type)) {
-            execp1 = execp1 + " AND A.resourcetype='%s'";
+            execp1 = execp1 + " AND A.resourcetype=\"%s\"";
             execp1 = String.format(execp1, type);
 
-            execp2 = execp2 + " AND A.resourcetype='%s'";
+            execp2 = execp2 + " AND A.resourcetype=\"%s\"";
             execp2 = String.format(execp2, type);
         }
         if (!"".equals(name)) {
-            execp1 = execp1 + " AND A.resourcename='%s'";
+            execp1 = execp1 + " AND A.resourcename=\"%s\"";
             execp1 = String.format(execp1, name);
 
-            execp2 = execp2 + " AND A.resourcename='%s'";
+            execp2 = execp2 + " AND A.resourcename=\"%s\"";
             execp2 = String.format(execp2, name);
         }
         exec = execp1 + Vars.__UNION__ + execp2 + Vars.__ORDERBYARG4__;
@@ -433,40 +433,40 @@ public class LremapasgraphService implements Serializable {
             execp2 = Select2Exec.__SELECTARG5_A2AVR_BASE_PART2__;
         } else {
             execp1 = Select2Exec.__SELECTARG5_A2AVR_FAM_PART1__;
-            execp1 = execp1 + " AND C.family='%s'";
+            execp1 = execp1 + " AND C.family=\"%s\"";
             execp1 = String.format(execp1, family);
 
             execp2 = Select2Exec.__SELECTARG5_A2AVR_FAM_PART2__;
-            execp2 = execp2 + " AND C.family='%s'";
+            execp2 = execp2 + " AND C.family=\"%s\"";
             execp2 = String.format(execp2, family);
         }
         if (!"".equals(author)) {
-            execp1 = execp1 + " AND A.author_1='%s'";
+            execp1 = execp1 + " AND A.author_1=\"%s\"";
             execp1 = String.format(execp1, author);
-            execp2 = execp2 + " AND A.author_2='%s'";
+            execp2 = execp2 + " AND A.author_2=\"%s\"";
             execp2 = String.format(execp2, author);
         }
         if (!"".equals(year)) {
-            execp1 = execp1 + " AND A.YEAR_1='%s'";
+            execp1 = execp1 + " AND A.YEAR_1=\"%s\"";
             execp1 = String.format(execp1, year);
 
-            execp2 = execp2 + " AND A.YEAR_2='%s'";
+            execp2 = execp2 + " AND A.YEAR_2=\"%s\"";
             execp2 = String.format(execp2, year);
         }
 
         if (!"".equals(type)) {
-            execp1 = execp1 + " AND A.resourcetype='%s'";
+            execp1 = execp1 + " AND A.resourcetype=\"%s\"";
             execp1 = String.format(execp1, type);
 
-            execp2 = execp2 + " AND A.resourcetype='%s'";
+            execp2 = execp2 + " AND A.resourcetype=\"%s\"";
             execp2 = String.format(execp2, type);
         }
 
         if (!"".equals(name)) {
-            execp1 = execp1 + " AND A.resourcename='%s'";
+            execp1 = execp1 + " AND A.resourcename=\"%s\"";
             execp1 = String.format(execp1, name);
 
-            execp2 = execp2 + " AND A.resourcename='%s'";
+            execp2 = execp2 + " AND A.resourcename=\"%s\"";
             execp2 = String.format(execp2, name);
         }
         exec = execp1 + Vars.__UNION__ + execp2;
@@ -502,40 +502,40 @@ public class LremapasgraphService implements Serializable {
             execp2 = Select2Exec.__SELECTARG6_SHARED_BASE_PART2__;
         } else {
             execp1 = Select2Exec.__SELECTARG6_SHARED_FAM_PART1__;
-            execp1 = execp1 + " AND C.family='%s'";
+            execp1 = execp1 + " AND C.family=\"%s\"";
             execp1 = String.format(execp1, family);
 
             execp2 = Select2Exec.__SELECTARG6_SHARED_FAM_PART2__;
-            execp2 = execp2 + " AND C.family='%s'";
+            execp2 = execp2 + " AND C.family=\"%s\"";
             execp2 = String.format(execp2, family);
         }
         if (!"".equals(author)) {
-            execp1 = execp1 + " AND A.author_1='%s'";
+            execp1 = execp1 + " AND A.author_1=\"%s\"";
             execp1 = String.format(execp1, author);
-            execp2 = execp2 + " AND A.author_2='%s'";
+            execp2 = execp2 + " AND A.author_2=\"%s\"";
             execp2 = String.format(execp2, author);
         }
         if (!"".equals(year)) {
-            execp1 = execp1 + " AND A.YEAR_1='%s'";
+            execp1 = execp1 + " AND A.YEAR_1=\"%s\"";
             execp1 = String.format(execp1, year);
 
-            execp2 = execp2 + " AND A.YEAR_2='%s'";
+            execp2 = execp2 + " AND A.YEAR_2=\"%s\"";
             execp2 = String.format(execp2, year);
         }
 
         if (!"".equals(type)) {
-            execp1 = execp1 + " AND A.resourcetype='%s'";
+            execp1 = execp1 + " AND A.resourcetype=\"%s\"";
             execp1 = String.format(execp1, type);
 
-            execp2 = execp2 + " AND A.resourcetype='%s'";
+            execp2 = execp2 + " AND A.resourcetype=\"%s\"";
             execp2 = String.format(execp2, type);
         }
 
         if (!"".equals(name)) {
-            execp1 = execp1 + " AND A.resourcename='%s'";
+            execp1 = execp1 + " AND A.resourcename=\"%s\"";
             execp1 = String.format(execp1, name);
 
-            execp2 = execp2 + " AND A.resourcename='%s'";
+            execp2 = execp2 + " AND A.resourcename=\"%s\"";
             execp2 = String.format(execp2, name);
         }
         exec = execp1 + Vars.__UNION__ + execp2 + Vars.__ORDERBYARG6__;

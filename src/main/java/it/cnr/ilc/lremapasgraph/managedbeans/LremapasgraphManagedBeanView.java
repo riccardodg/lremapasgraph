@@ -11,6 +11,8 @@ import com.google.common.collect.Lists;
 import it.cnr.ilc.lremapasgraph.db.DbConnect;
 import it.cnr.ilc.lremapasgraph.db.Vars;
 import it.cnr.ilc.lremapasgraph.io.LreMapAsGraphFileWriter;
+import it.cnr.ilc.lremapasgraph.io.LreMapAsGraphJsonizer;
+import it.cnr.ilc.lremapasgraph.io.LreMapAsGraphStructureManager;
 import it.cnr.ilc.lremapasgraph.services.LremapasgraphService;
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,6 +22,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.json.JsonObject;
 
 /**
  *
@@ -57,6 +60,7 @@ public class LremapasgraphManagedBeanView {
     private String vis = "a2avr";
     private String theLog = "";
     private String theLog4File = "";
+    private String theLog4Structure = "";
 
     // connection
     Connection conn;
@@ -80,10 +84,15 @@ public class LremapasgraphManagedBeanView {
     }
 
     public void filterAndSearch() {
+        LreMapAsGraphStructureManager manager = new LreMapAsGraphStructureManager();
+        LreMapAsGraphJsonizer json = new LreMapAsGraphJsonizer();
         boolean retfile = false;
+        String ret = "";
+        JsonObject obj = null;
         // clear log
         theLog = "";
-        theLog4File="";
+        theLog4File = "";
+        theLog4Structure = "";
         if ("a2avr".equals(vis)) {
 
             file_distinct_authors_arg1 = getFile_distinct_authors_arg1();
@@ -103,16 +112,16 @@ public class LremapasgraphManagedBeanView {
 
             file_shared_resources_arg6 = getFile_shared_resources_arg6();
             theLog = getTheLog() + "\nfilterAndSearch: getFile_shared_resources_arg6() with year -" + getYear() + "- (" + file_shared_resources_arg6.size() + ")";
-            
+
             theLog = getTheLog() + "\n--\n";
 
             //setTheLog(theLog);
             try {
                 retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG1__, file_distinct_authors_arg1);
-                theLog4File = getTheLog4File()+ "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG1__ + "- " + retfile;
+                theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG1__ + "- " + retfile;
 
             } catch (IOException ioe) {
-                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG1__ + " -" + ioe.getMessage()+ "- "+retfile;
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG1__ + " -" + ioe.getMessage() + "- " + retfile;
 
             }
 
@@ -121,7 +130,7 @@ public class LremapasgraphManagedBeanView {
                 theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG2__ + "- " + retfile;
 
             } catch (IOException ioe) {
-                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG2__ + " -" + ioe.getMessage()+ "- "+retfile;
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG2__ + " -" + ioe.getMessage() + "- " + retfile;
 
             }
 
@@ -130,7 +139,7 @@ public class LremapasgraphManagedBeanView {
                 theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG3__ + "- " + retfile;
 
             } catch (IOException ioe) {
-                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG3__ + " -" + ioe.getMessage()+ "- "+retfile;
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG3__ + " -" + ioe.getMessage() + "- " + retfile;
 
             }
 
@@ -139,25 +148,42 @@ public class LremapasgraphManagedBeanView {
                 theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG4__ + "- " + retfile;
 
             } catch (IOException ioe) {
-                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG4__ + " -" + ioe.getMessage()+ "- "+retfile;
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG4__ + " -" + ioe.getMessage() + "- " + retfile;
 
             }
-            
+
             try {
                 retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG5__, file_distinct_a2avr_arg5);
                 theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG5__ + "- " + retfile;
 
             } catch (IOException ioe) {
-                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG5__ + " -" + ioe.getMessage()+ "- "+retfile;
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG5__ + " -" + ioe.getMessage() + "- " + retfile;
 
             }
-            
+
             try {
                 retfile = CreateAndWriteFile(Vars.__FILE_NAME_ARG6__, file_shared_resources_arg6);
                 theLog4File = getTheLog4File() + "\nfilterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG6__ + "- " + retfile;
 
             } catch (IOException ioe) {
-                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG6__ + " -" + ioe.getMessage()+ "- "+retfile;
+                theLog4File = getTheLog4File() + "\n*****FATAL**** filterAndSearch: CreateAndWriteFile -" + Vars.__FILE_NAME_ARG6__ + " -" + ioe.getMessage() + "- " + retfile;
+
+            }
+
+            ret = manager.readIstiFileAndPrepareStructure(file_distinct_affiliations_arg2);
+            theLog4Structure = getTheLog4Structure() + "\nfilterAndSearch: readIstiFileAndPrepareStructure() on file " + Vars.__FILE_NAME_ARG2__ + " -" + ret + "- ";
+
+            ret = manager.readResourceAndARFilesAndPrepareStructure(file_distinct_resources_arg4, file_distinct_a2avr_arg5, file_shared_resources_arg6);
+            theLog4Structure = getTheLog4Structure() + "\nfilterAndSearch: readResourceAndARFilesAndPrepareStructure() on files " + Vars.__FILE_NAME_ARG4__ + " and " + Vars.__FILE_NAME_ARG5__ + " -" + ret + "- ";
+
+            //json.setManager(manager);
+            obj = json.readResourceAndARFilesAndPrepareJsonStructure(manager, file_distinct_a2avr_arg5);
+            try {
+                retfile = LreMapAsGraphFileWriter.CreateAndWriteFileJson(Vars.__FILE_OUT_JSON__, obj);
+                theLog4Structure = getTheLog4File() + "\nfilterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__FILE_OUT_JSON__ + "- " + retfile;
+
+            } catch (IOException ioe) {
+                theLog4Structure = getTheLog4File() + "\n*****FATAL**** filterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__FILE_OUT_JSON__ + " -" + ioe.getMessage() + "- " + retfile;
 
             }
 
@@ -168,6 +194,7 @@ public class LremapasgraphManagedBeanView {
 
     public boolean CreateAndWriteFile(String filename, List<String> list) throws IOException {
         boolean completefilename = true;
+
         completefilename = LreMapAsGraphFileWriter.CreateAndWriteFile(filename, list);
 
         return completefilename;
@@ -188,7 +215,7 @@ public class LremapasgraphManagedBeanView {
 
         return results;
     }
-    
+
     public List<String> completeNames(String query) {
         List<String> results = Lists.newArrayList(Collections2.filter(
                 getResourcenames(), Predicates.containsPattern(query)));
@@ -419,7 +446,6 @@ public class LremapasgraphManagedBeanView {
     public List<String> getFile_distinct_authors_arg1() {
         String year = "", conf = "";
         String confYear = getConf_year();
-        
 
         confYear = confYear.replace(" (", "-").replace(")", "");
         //
@@ -430,8 +456,8 @@ public class LremapasgraphManagedBeanView {
                 year = temp[1].trim();
             }
             //file_distinct_authors_arg1 = service.getFile_arg1(year);
-        } 
-        file_distinct_authors_arg1=service.getFile_arg1(year, author, type, family, name);
+        }
+        file_distinct_authors_arg1 = service.getFile_arg1(year, author, type, family, name);
 
         setYear(year);
         setConf(conf);
@@ -474,7 +500,7 @@ public class LremapasgraphManagedBeanView {
         year = getYear();
         conf = getConf();
         file_distinct_affiliations_arg2 = service.getFile_arg2(year);
-        
+
         return file_distinct_affiliations_arg2;
     }
 
@@ -493,8 +519,7 @@ public class LremapasgraphManagedBeanView {
         String year = "", conf = "";
         year = getYear();
         conf = getConf();
-        file_size_affiliations_arg3=service.getFile_arg3(year, author, type, family, name);
-        
+        file_size_affiliations_arg3 = service.getFile_arg3(year, author, type, family, name);
 
         return file_size_affiliations_arg3;
     }
@@ -513,8 +538,8 @@ public class LremapasgraphManagedBeanView {
         String year = "", conf = "";
         year = getYear();
         conf = getConf();
-        file_distinct_resources_arg4 = service.getFile_arg4(year, author, type, family,name);
-      
+        file_distinct_resources_arg4 = service.getFile_arg4(year, author, type, family, name);
+
         return file_distinct_resources_arg4;
     }
 
@@ -533,7 +558,7 @@ public class LremapasgraphManagedBeanView {
         String year = "", conf = "";
         year = getYear();
         conf = getConf();
-        file_distinct_a2avr_arg5 = service.getFile_arg5(year, author, type, family,name);
+        file_distinct_a2avr_arg5 = service.getFile_arg5(year, author, type, family, name);
         return file_distinct_a2avr_arg5;
     }
 
@@ -551,7 +576,7 @@ public class LremapasgraphManagedBeanView {
         String year = "", conf = "";
         year = getYear();
         conf = getConf();
-        file_shared_resources_arg6 = service.getFile_arg6(year, author, type, family,name);
+        file_shared_resources_arg6 = service.getFile_arg6(year, author, type, family, name);
         return file_shared_resources_arg6;
     }
 
@@ -588,6 +613,20 @@ public class LremapasgraphManagedBeanView {
      */
     public void setTheLog4File(String theLog4File) {
         this.theLog4File = theLog4File;
+    }
+
+    /**
+     * @return the theLog4Structure
+     */
+    public String getTheLog4Structure() {
+        return theLog4Structure;
+    }
+
+    /**
+     * @param theLog4Structure the theLog4Structure to set
+     */
+    public void setTheLog4Structure(String theLog4Structure) {
+        this.theLog4Structure = theLog4Structure;
     }
 
 }
