@@ -200,6 +200,83 @@ public class LreMapAsGraphStructureManager {
 
         return result;
     }
+
+    public String readResourceR2RFileAndPrepareStructure(List<String> distinct_r2rva_arg1) {
+        int i = 0;
+        int j = 0;
+        String result = Vars.__OK__;
+        HashMap<String, Integer> temp_resource2Idx = new HashMap<String, Integer>();
+        HashMap<String, Integer> temp_author2Idx = new HashMap<String, Integer>();
+        List<String> temp_resources = new ArrayList<String>();
+        List<String> temp_auth = new ArrayList<String>();
+        HashMap<String, String> temp_author2normaffiliation = new HashMap<String, String>();
+        HashMap<String, String> temp_resource2year = new HashMap<String, String>();
+
+        String r0 = "", r1 = "";
+        String author = "", a1 = "", a00 = "", a11 = "", affi = "", r = "", year0 = "", year1 = "";
+
+        try {
+            for (String s : distinct_r2rva_arg1) {
+                r0 = s.split(Vars.__SEPTAB__)[0].trim(); // resourcename_1 
+                r0 = cleaner(r0);
+                year0 = s.split(Vars.__SEPTAB__)[1].trim(); // year_1
+                author = s.split(Vars.__SEPTAB__)[2].trim(); // author
+                affi = s.split(Vars.__SEPTAB__)[3].trim(); // affi
+
+                r1 = s.split(Vars.__SEPTAB__)[4].trim(); // resourcename_2 
+                r1 = cleaner(r1);
+                year1 = s.split(Vars.__SEPTAB__)[5].trim(); // year_2
+
+                // resources
+                if (!temp_resources.contains(r0)) {
+                    temp_resource2Idx.put(r0, i);
+                    temp_resources.add(r0);
+                    temp_resource2year.put(r0, year0);
+                    i++;
+                } else {
+                    //System.err.println("XXXXX R0 SKIPPED " + r0);
+
+                }
+
+                if (!temp_resources.contains(r1)) {
+                    temp_resource2Idx.put(r1, i);
+                    temp_resources.add(r1);
+                    temp_resource2year.put(r1, year1);
+                    i++;
+                } else {
+                    //System.err.println("XXXXX R1 SKIPPED " + r1);
+
+                }
+
+                // authors
+                if (!temp_auth.contains(author)) {
+                    temp_auth.add(author);
+                    temp_author2Idx.put(author, j);
+                    temp_author2normaffiliation.put(author, affi);
+
+                    j++;
+                } else {
+                    //System.err.println("XXXXX R0 SKIPPED " + r0);
+
+                }
+
+            }
+        } catch (Exception e) {
+            result = Vars.__KO__;
+        }
+
+//        // set structures
+        setResource2Idx(temp_resource2Idx); // self.set_d(D).
+        setResources(temp_resources); // self.set_res(res)
+
+        setAuth(temp_auth); //self.set_auth(auth)
+        setAuthor2Idx(temp_author2Idx); //self.set_dn(DN)
+        setAuthor2normaffiliation(temp_author2normaffiliation); //self.set_auth_2affi(A) 
+        setResources2year(temp_resource2year); // S
+        System.err.println("SIZE AUTH " + temp_author2Idx.size());
+        System.err.println("SIZE RES " + temp_resource2Idx.size());
+        return result;
+    }
     //distinct_resources.csv distinct_a2avr.csv
 
     private String cleaner(String str2clean) {

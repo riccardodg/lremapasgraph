@@ -101,18 +101,18 @@
 
 
                             <p:selectOneMenu id="acCy" value="#{lremapasgraphManagedBeanView.conf_year}" style="width:320px" filter="true" filterMatchMode="contains" >
-                                <f:selectItem itemLabel="Select a Type" itemValue="" noSelectionOption="true" />
+                                <f:selectItem itemLabel="Select a Conference (Year)" itemValue="" noSelectionOption="true" />
                                 <f:selectItems value="#{lremapasgraphManagedBeanView.confs_years}" />
                             </p:selectOneMenu>
                         </h:panelGrid>
                         <p:separator />
 
                         <p:commandButton onstart="PF('loadingDialog').show()" value="Submit" update="display tLog fLog sLog"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}" oncomplete="
-
+                                         PF('loadingDialog').hide();
                                          var iframe = document.getElementById('graph');
                                          iframe.src = iframe.src;
-                                         PF('loadingDialog').hide();
-                                         
+
+
                                          "/>
 
                     </p:layoutUnit>
@@ -127,7 +127,7 @@
 
         </f:view>
     </h:form>
-     <p:dialog widgetVar="loadingDialog" styleClass="loadingDialog" modal="true" closable="false" resizable="false">
+    <p:dialog widgetVar="loadingDialog" styleClass="loadingDialog" modal="true" closable="false" resizable="false">
         <p:outputLabel styleClass="loadingLabel" value="Loading"/>
         <p:graphicImage styleClass="loadingImage" name="waiting.gif"/>
     </p:dialog>

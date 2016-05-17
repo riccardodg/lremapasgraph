@@ -23,6 +23,7 @@ public class Vars {
     public static String __FILE_NAME_ARG6__="shared_resources.csv";
     public static String __FILE_OUT_JSON__="output.json";
     
+    public static String __FILE_NAME_R2RVA_ARG1__="distinct_r2rva.csv";
     // vars for select 
     public static final String __ORDERBYARG4__ = " ORDER BY 1; ";
     public static final String __ORDERBYARG6__ = " ORDER BY 1; ";

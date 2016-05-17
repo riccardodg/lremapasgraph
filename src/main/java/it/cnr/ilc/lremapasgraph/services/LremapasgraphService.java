@@ -38,6 +38,7 @@ public class LremapasgraphService implements Serializable {
     private List<String> file_arg4 = new ArrayList<String>();
     private List<String> file_arg5 = new ArrayList<String>();
     private List<String> file_arg6 = new ArrayList<String>();
+    private List<String> file_r2rva_arg1 = new ArrayList<String>();
 
     private Connection conn;
 
@@ -482,6 +483,75 @@ public class LremapasgraphService implements Serializable {
     }
 
     /**
+     * Return arg5 dataset
+     *
+     * @param year the year to filter
+     * @param author the author to filter
+     * @param type the resource type
+     * @param family the family to filter
+     * @param name the resname to filter
+     * @return the list of data
+     */
+    public List<String> getFile_r2rva_arg1(String year, String author, String type, String family, String name) {
+        ResultSet res;
+        String execp1 = "";
+        String execp2 = "";
+        String exec = "";
+        file_r2rva_arg1.clear();
+        if ("".equals(family)) {
+            execp1 = Select2Exec.__SELECTARG1_R2R_PART1__;
+            execp2 = Select2Exec.__SELECTARG1_R2R_PART2__;
+        } else {
+            execp1 = Select2Exec.__SELECTARG1_R2R_FAM_PART1__;
+            execp1 = execp1 + " AND C.family=\"%s\"";
+            execp1 = String.format(execp1, family);
+
+            execp2 = Select2Exec.__SELECTARG1_R2R_FAM_PART2__;
+            execp2 = execp2 + " AND C.family=\"%s\"";
+            execp2 = String.format(execp2, family);
+        }
+        if (!"".equals(author)) {
+            execp1 = execp1 + " AND A.author=\"%s\"";
+            execp1 = String.format(execp1, author);
+            execp2 = execp2 + " AND A.author=\"%s\"";
+            execp2 = String.format(execp2, author);
+        }
+        if (!"".equals(year)) {
+            execp1 = execp1 + " AND A.YEAR_1=\"%s\"";
+            execp1 = String.format(execp1, year);
+
+            execp2 = execp2 + " AND A.YEAR_2=\"%s\"";
+            execp2 = String.format(execp2, year);
+        }
+
+        if (!"".equals(type)) {
+            execp1 = execp1 + " AND A.resourcetype_1=\"%s\"";
+            execp1 = String.format(execp1, type);
+
+            execp2 = execp2 + " AND A.resourcetype_2=\"%s\"";
+            execp2 = String.format(execp2, type);
+        }
+
+        if (!"".equals(name)) {
+            execp1 = execp1 + " AND A.resourcename_1=\"%s\"";
+            execp1 = String.format(execp1, name);
+
+            execp2 = execp2 + " AND A.resourcename_2=\"%s\"";
+            execp2 = String.format(execp2, name);
+        }
+        exec = execp1 + Vars.__UNION__ + execp2;
+        System.err.println("R2RVA_ARG1 - " + exec);
+        try {
+            res = DbConnect.execStmAndGetResultSet(getConn(), exec);
+            file_r2rva_arg1 = loopOverRSr2rArg1(res);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return file_r2rva_arg1;
+    }
+
+    /**
      * Return arg6 dataset
      *
      * @param year the year to filter
@@ -589,6 +659,33 @@ public class LremapasgraphService implements Serializable {
             wikiname = rs.getString(3);
             affiliation = rs.getString(4);
             out = fname + Vars.__SEPTAB__ + lname + Vars.__SEPTAB__ + wikiname + Vars.__SEPTAB__ + affiliation;
+            list.add(out);
+            l++;
+        }
+
+        return list;
+    }
+
+    /**
+     * loop over the result set of arg1 data for r2rva. 4 columns
+     *
+     * @param rs the result set
+     * @return the resultset as string tab-separated
+     * @throws SQLException
+     */
+    private List<String> loopOverRSr2rArg1(ResultSet rs) throws SQLException {
+        List<String> list = new ArrayList<String>();
+        String name_1 = "", conf_1 = "", wikiname = "", name_2 = "", conf_2 = "", affiliation = "";
+        String out = "";
+        int l = 0;
+        while (rs.next()) {
+            name_1 = rs.getString(1);
+            conf_1 = rs.getString(2);
+            wikiname = rs.getString(3);
+            affiliation = rs.getString(4);
+            name_2 = rs.getString(5);
+            conf_2 = rs.getString(6);
+            out = name_1 + Vars.__SEPTAB__ + conf_1 + Vars.__SEPTAB__ + wikiname + Vars.__SEPTAB__ + affiliation + Vars.__SEPTAB__ + name_2 + Vars.__SEPTAB__ + conf_2;
             list.add(out);
             l++;
         }
@@ -802,6 +899,20 @@ public class LremapasgraphService implements Serializable {
      */
     public void setFile_arg6(List<String> file_arg6) {
         this.file_arg6 = file_arg6;
+    }
+
+    /**
+     * @return the file_r2rva_arg1
+     */
+    public List<String> getFile_r2rva_arg1() {
+        return file_r2rva_arg1;
+    }
+
+    /**
+     * @param file_r2rva_arg1 the file_r2rva_arg1 to set
+     */
+    public void setFile_r2rva_arg1(List<String> file_r2rva_arg1) {
+        this.file_r2rva_arg1 = file_r2rva_arg1;
     }
 
 }

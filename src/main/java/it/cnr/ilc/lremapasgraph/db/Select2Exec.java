@@ -13,19 +13,17 @@ public class Select2Exec {
 
     // tables
     public static final String __TABA2AVR__ = "a2avr ";
+    public static final String __TABR2RVA__ = "r2rva ";
     public static final String __TABAFFI__ = "affiliations ";
     public static final String __TABFAMILY__ = "families C ";
     public static final String __TABAFFI1__ = "affiliations AF1 ";
     public static final String __TABAFFI2__ = "affiliations AF2 ";
-    
-    
 
     // SELECTS
     // create the first argument authors distinct_authors_<ALLYEAR>.csv
-   
     /*
     arg1 argument authors distinct_authors.csv base (no family involved) part 1
-    */
+     */
     public static final String __SELECTARG1_DISTAUTH_PART1_BASE__ = " SELECT "
             + "distinct replace(firstname_1,'\\n',' ') as firstname, "
             + "replace(lastname_1,'\\n',' ') as lastname, "
@@ -42,7 +40,7 @@ public class Select2Exec {
 
     /*
     arg1 argument authors distinct_authors.csv base (no family involved) part 2
-    */
+     */
     public static final String __SELECTARG1_DISTAUTH_PART2_BASE__ = " SELECT "
             + "distinct replace(firstname_2,'\\n',' '), "
             + "replace(lastname_2,'\\n',' '), "
@@ -59,7 +57,7 @@ public class Select2Exec {
 
     /*
     arg1 argument authors distinct_authors.csv family  part 1
-    */
+     */
     public static final String __SELECTARG1_DISTAUTH_PART1_FAM__ = " SELECT distinct replace(firstname_1,'\\n',' '), "
             + "replace(lastname_1,'\\n',' '), "
             + "concat(replace(firstname_1,'\\n',' '),'_', replace(lastname_1,'\\n',' ')) as wikiname, "
@@ -78,7 +76,7 @@ public class Select2Exec {
 
     /*
     arg1 argument authors distinct_authors.csv family  part 2
-    */
+     */
     public static final String __SELECTARG1_DISTAUTH_PART2_FAM__ = " SELECT distinct replace(firstname_2,'\\n',' '), "
             + "replace(lastname_2,'\\n',' '), "
             + "concat(replace(firstname_2,'\\n',' '),'_', replace(lastname_2,'\\n',' ')) as wikiname, "
@@ -174,7 +172,6 @@ public class Select2Exec {
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 "
             + " group by lower(replace(affiliation_2, '\n', ' ')) ,concat(replace(firstname_2,'\n',' '),'_', replace(lastname_2,'\n',' '))";
 
-    
     /*
     arg4 distinct_resources.csv base (no family involved) part 1
      */
@@ -191,7 +188,7 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year ";
-    
+
     /*
     arg4 distinct_resources.csv base (no family involved) part 2
      */
@@ -228,7 +225,7 @@ public class Select2Exec {
             + "AND A.YEAR_2 = AF2.year "
             + "AND lower(C.name)=lower(A.resourcename) "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
-    
+
     /*
     arg4 distinct_resources.csv family part 2
      */
@@ -300,7 +297,7 @@ public class Select2Exec {
             + "AND A.YEAR_2 = AF2.year  "
             + "AND lower(C.name)=lower(A.resourcename) "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
-    
+
     /*
     arg5 distinct_a2avr.csv family part 2
      */
@@ -323,7 +320,6 @@ public class Select2Exec {
             + "AND lower(C.name)=lower(A.resourcename) "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
-    
     /*
     arg6 shared_resources_2010.csv base (no family involved) part 1
      */
@@ -340,7 +336,7 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year ";
-    
+
     /*
     arg6 shared_resources_2010.csv base (no family involved) part 2
      */
@@ -376,7 +372,7 @@ public class Select2Exec {
             + "AND A.YEAR_2 = AF2.year  "
             + "AND lower(C.name)=lower(A.resourcename) "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
-    
+
     /*
     arg6 shared_resources_2010.csv family  part 2
      */
@@ -395,4 +391,40 @@ public class Select2Exec {
             + "AND A.YEAR_2 = AF2.year  "
             + "AND lower(C.name)=lower(A.resourcename) "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
+
+    // arg1 r2rva visualization
+    public static final String __SELECTARG1_R2R_PART1__ = "SELECT distinct A.resourcename_1, "
+            + "concat(A.CONF_1,' ', A.YEAR_1),  A.author, "
+            + "AF.norm_affiliation, "
+            + "A.resourcename_2, "
+            + "concat(A.CONF_2,' ', A.YEAR_2)"
+            + "FROM " + __TABR2RVA__ + " A, " + __TABAFFI__ + " AF  where LOWER(A.affiliation_1) = AF.affiliation";
+
+    public static final String __SELECTARG1_R2R_PART2__ = "SELECT distinct A.resourcename_1, "
+            + "concat(A.CONF_1,' ', A.YEAR_1),  A.author, "
+            + "AF.norm_affiliation, "
+            + "A.resourcename_2, "
+            + "concat(A.CONF_2,' ', A.YEAR_2)"
+            + "FROM " + __TABR2RVA__ + " A, " + __TABAFFI__ + " AF  where LOWER(A.affiliation_1) = AF.affiliation";
+
+    public static final String __SELECTARG1_R2R_FAM_PART1__ = "SELECT distinct A.resourcename_1, "
+            + "concat(A.CONF_1,' ', A.YEAR_1),  A.author, "
+            + "AF.norm_affiliation, "
+            + "A.resourcename_2, "
+            + "concat(A.CONF_2,' ', A.YEAR_2)"
+            + "FROM " + __TABR2RVA__ + " A, " + __TABAFFI__ + " AF  ," + __TABFAMILY__
+            + "where LOWER(A.affiliation_1) = AF.affiliation "
+            + "AND lower(C.name)=lower(A.resourcename_1) "
+            + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
+
+    public static final String __SELECTARG1_R2R_FAM_PART2__ = "SELECT distinct A.resourcename_1, "
+            + "concat(A.CONF_1,' ', A.YEAR_1),  A.author, "
+            + "AF.norm_affiliation, "
+            + "A.resourcename_2, "
+            + "concat(A.CONF_2,' ', A.YEAR_2)"
+            + "FROM " + __TABR2RVA__ + " A, " + __TABAFFI__ + " AF  ," + __TABFAMILY__
+            + "where LOWER(A.affiliation_1) = AF.affiliation "
+            + "AND lower(C.name)=lower(A.resourcename_2) "
+            + "AND C.CONF=A.CONF_2 and C.YEAR=A.YEAR_2 ";
+
 }
