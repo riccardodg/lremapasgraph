@@ -71,7 +71,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     /*
@@ -90,7 +91,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     /*
@@ -148,7 +150,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 "
             + " group by lower(replace(affiliation_1, '\n', ' ')) ,concat(replace(firstname_1,'\n',' '),'_', replace(lastname_1,'\n',' '))";
 
@@ -168,7 +171,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 "
             + " group by lower(replace(affiliation_2, '\n', ' ')) ,concat(replace(firstname_2,'\n',' '),'_', replace(lastname_2,'\n',' '))";
 
@@ -223,7 +227,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     /*
@@ -243,7 +248,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     // arg5 distinct_a2avr_lrec2010.csv  args[5]
@@ -295,7 +301,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     /*
@@ -317,7 +324,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     /*
@@ -370,7 +378,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+           // + "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     /*
@@ -389,7 +398,8 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-            + "AND lower(C.name)=lower(A.resourcename) "
+            //+ "AND lower(C.name)=lower(A.resourcename) "
+            + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     // arg1 r2rva visualization
@@ -414,7 +424,8 @@ public class Select2Exec {
             + "concat(A.CONF_2,' ', A.YEAR_2)"
             + "FROM " + __TABR2RVA__ + " A, " + __TABAFFI__ + " AF  ," + __TABFAMILY__
             + "where LOWER(A.affiliation_1) = AF.affiliation "
-            + "AND lower(C.name)=lower(A.resourcename_1) "
+            //+ "AND lower(C.name)=lower(A.resourcename_1) "
+            + "AND C.name=A.resourcename_1 "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
     public static final String __SELECTARG1_R2R_FAM_PART2__ = "SELECT distinct A.resourcename_1, "
@@ -424,7 +435,8 @@ public class Select2Exec {
             + "concat(A.CONF_2,' ', A.YEAR_2)"
             + "FROM " + __TABR2RVA__ + " A, " + __TABAFFI__ + " AF  ," + __TABFAMILY__
             + "where LOWER(A.affiliation_1) = AF.affiliation "
-            + "AND lower(C.name)=lower(A.resourcename_2) "
+            //+ "AND lower(C.name)=lower(A.resourcename_2) "
+            + "AND C.name=A.resourcename_2 "
             + "AND C.CONF=A.CONF_2 and C.YEAR=A.YEAR_2 ";
 
 }

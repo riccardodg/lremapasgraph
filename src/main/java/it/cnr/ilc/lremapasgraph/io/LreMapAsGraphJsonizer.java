@@ -194,37 +194,37 @@ public class LreMapAsGraphJsonizer {
 
                 linkObjBuilder = Json.createObjectBuilder();
 
-//                already = (temp_resource2Idx.get(r0)+i-1) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
-//                if (!check.contains(already)) {
-//                    linkObjBuilder.add("source", (temp_resource2Idx.get(r0)+i-1));
-//                    linkObjBuilder.add("bond", bond);
-//                    linkObjBuilder.add("target", temp_author2Idx.get(author));
-//                    linksArrayBuilder.add(linkObjBuilder);
-//                    check.add(already);
-//                } else {
-//                    System.err.println("skipped r0 -" + already);
-//                }
-//                
-//                already = (temp_resource2Idx.get(r1)+i-1) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
-//                if (!check.contains(already)) {
-//                    linkObjBuilder.add("source", (temp_resource2Idx.get(r1)+i-1));
-//                    linkObjBuilder.add("bond", bond);
-//                    linkObjBuilder.add("target", temp_author2Idx.get(author));
-//                    linksArrayBuilder.add(linkObjBuilder);
-//                    check.add(already);
-//                } else {
-//                    System.err.println("skipped r1 -" + already);
-//                }
+                already = (temp_resource2Idx.get(r0)+j) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
+                if (!check.contains(already)) {
+                    linkObjBuilder.add("source", (temp_resource2Idx.get(r0)+j));
+                    linkObjBuilder.add("bond", bond);
+                    linkObjBuilder.add("target", temp_author2Idx.get(author));
+                    linksArrayBuilder.add(linkObjBuilder);
+                    check.add(already);
+                } else {
+                    System.err.println("skipped r0 -" + already);
+                }
                 
-                 linkObjBuilder.add("source", (temp_resource2Idx.get(r0)+j));
+                already = (temp_resource2Idx.get(r1)+j) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
+                if (!check.contains(already)) {
+                    linkObjBuilder.add("source", (temp_resource2Idx.get(r1)+j));
                     linkObjBuilder.add("bond", bond);
                     linkObjBuilder.add("target", temp_author2Idx.get(author));
                     linksArrayBuilder.add(linkObjBuilder);
-                    
-                     linkObjBuilder.add("source", (temp_resource2Idx.get(r1)+j));
-                    linkObjBuilder.add("bond", bond);
-                    linkObjBuilder.add("target", temp_author2Idx.get(author));
-                    linksArrayBuilder.add(linkObjBuilder);
+                    check.add(already);
+                } else {
+                    System.err.println("skipped r1 -" + already);
+                }
+                
+//                 linkObjBuilder.add("source", (temp_resource2Idx.get(r0)+j));
+//                    linkObjBuilder.add("bond", bond);
+//                    linkObjBuilder.add("target", temp_author2Idx.get(author));
+//                    linksArrayBuilder.add(linkObjBuilder);
+//                    
+//                     linkObjBuilder.add("source", (temp_resource2Idx.get(r1)+j));
+//                    linkObjBuilder.add("bond", bond);
+//                    linkObjBuilder.add("target", temp_author2Idx.get(author));
+//                    linksArrayBuilder.add(linkObjBuilder);
             }
             
             

@@ -53,6 +53,7 @@ public class LremapasgraphManagedBeanView {
     private List<String> file_distinct_r2rva_arg1 = new ArrayList<String>();
 
     private String name;
+    private String url;
     private String type;
     private String family;
     private String author;
@@ -116,7 +117,9 @@ public class LremapasgraphManagedBeanView {
 
         setYear(year);
         setConf(conf);
-        System.err.println("confYear " + confYear);
+        //System.err.println("confYear " + confYear);
+        
+        // set the url
         if ("a2avr".equals(vis)) {
 
 //            file_distinct_authors_arg1 = getFile_distinct_authors_arg1();

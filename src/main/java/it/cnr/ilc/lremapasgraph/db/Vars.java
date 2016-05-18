@@ -22,6 +22,7 @@ public class Vars {
     public static String __FILE_NAME_ARG5__="distinct_a2avr.csv";
     public static String __FILE_NAME_ARG6__="shared_resources.csv";
     public static String __FILE_OUT_JSON__="output.json";
+    public static String __FILE_OUT_HTML__="sxo.html";
     
     public static String __FILE_NAME_R2RVA_ARG1__="distinct_r2rva.csv";
     // vars for select 
