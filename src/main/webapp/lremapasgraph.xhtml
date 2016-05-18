@@ -1,9 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
+    <head><meta charset="utf-8"/></head>
     <h:form>
         <f:view contentType="text/html">
             <h:head>
@@ -19,7 +21,7 @@
 
                     <p:layoutUnit position="north" size="180" resizable="true" closable="true" collapsible="true" >
                         <!--                        <p>Filter parameters:</p>-->
-                        <h:panelGrid columns="10" cellpadding="5" id="display">
+                        <h:panelGrid columns="12" cellpadding="5" id="display">
                             <p:outputLabel value="Author:" for="selAuthor" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.author}" readonly="true" id="selAuthor"/>
                             <p:outputLabel value="Resource:" for="selName" />
@@ -30,6 +32,8 @@
                             <p:inputText value="#{lremapasgraphManagedBeanView.type}" readonly="true" id="selType"/>
                             <p:outputLabel value="Conference (year):" for="selCy" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.conf_year}" readonly="true" id="selCy"/>
+                            <p:outputLabel value="View in a new Tab:" for="extView" />
+                            <p:link outcome="output.xhtml" id="extView" value="External Viewer" target="_blank"/>
 
                         </h:panelGrid>
                         <p:separator></p:separator>
@@ -107,18 +111,27 @@
                         </h:panelGrid>
                         <p:separator />
 
-                        <p:commandButton onstart="PF('loadingDialog').show()" value="Submit" update="display tLog fLog sLog"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}" oncomplete="
-                                         PF('loadingDialog').hide();
+<!--                        <p:commandButton onstart="PF('loadingDialog').show()" value="Submit" update="display tLog fLog sLog"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}" oncomplete="
+                                         
                                          var iframe = document.getElementById('graph');
                                          iframe.src = iframe.src;
+                                         
 
 
+                                         "/>-->
+
+                        <p:commandButton value="Submit" onstart="PF('loadingDialog').show()" update="tLog fLog sLog display"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}"  oncomplete="
+                                         
+                                         var iframe = document.getElementById('graph');
+                                         
+                                         iframe.src = iframe.src;
+                                         PF('loadingDialog').hide()
                                          "/>
 
                     </p:layoutUnit>
 
                     <p:layoutUnit position="center" >
-                        <iframe src="http://localhost/clic/sxo.html" width="100%" height="100%" id="graph"></iframe> 
+                        <iframe src="http://pcdelgratta:8080/lremapasgraph/faces/output.xhtml" width="100%" height="100%" id="graph"></iframe> 
                     </p:layoutUnit>
 
                 </p:layout>

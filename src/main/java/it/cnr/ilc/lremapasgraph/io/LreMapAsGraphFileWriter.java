@@ -9,8 +9,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import it.cnr.ilc.lremapasgraph.db.Vars;
 import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -69,18 +71,27 @@ public class LreMapAsGraphFileWriter {
         completefilename = CreateFile(filename, Vars.__OUTDIR__);
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         if (!"".equals(completefilename)) {
-            Writer output = new BufferedWriter(new FileWriter(completefilename));
+            //Writer output = new BufferedWriter(new FileWriter(completefilename));
+            BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(completefilename), "UTF-8"));
+
             try {
 
                 Object json = mapper.readValue(str, Object.class);
 
                 indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
                 output.write(indented);
+                output.close();
             } catch (Exception e) {
                 ret = false;
 
             } finally {
                 output.close();
+            }
+            try {
+                System.err.println("prima");
+                Thread.sleep(3000);
+                System.err.println("dopo");
+            } catch (Exception r) {
             }
         }
 

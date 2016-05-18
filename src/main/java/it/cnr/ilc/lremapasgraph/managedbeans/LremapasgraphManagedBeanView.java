@@ -200,7 +200,7 @@ public class LremapasgraphManagedBeanView {
             obj = json.readResourceAndARFilesAndPrepareJsonStructure(manager, file_distinct_a2avr_arg5);
             try {
                 retfile = LreMapAsGraphFileWriter.CreateAndWriteFileJson(Vars.__FILE_OUT_JSON__, obj);
-                theLog4Structure = getTheLog4File() + "\nfilterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__FILE_OUT_JSON__ + "- " + retfile;
+                theLog4Structure = getTheLog4File() + "\nfilterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__OUTDIR__+Vars.__SEP__+Vars.__FILE_OUT_JSON__ + "- " + retfile;
 
             } catch (IOException ioe) {
                 theLog4Structure = getTheLog4File() + "\n*****FATAL**** filterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__FILE_OUT_JSON__ + " -" + ioe.getMessage() + "- " + retfile;

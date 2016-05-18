@@ -29,7 +29,7 @@ public class DbConnect {
     
 
     public Connection db_connect() {
-        String connStr = "jdbc:mysql://" + host + "/" + database + "?" + "user=" + user + "&password=" + passwd;
+        String connStr = "jdbc:mysql://" + host + "/" + database + "?useUnicode=true&characterEncoding=utf-8&" + "user=" + user + "&password=" + passwd;
 
         try {
 
@@ -37,6 +37,7 @@ public class DbConnect {
             if (conn == null) {
                 conn = DriverManager
                         .getConnection(connStr);
+                
             }
 
         } catch (SQLException  sqle) {

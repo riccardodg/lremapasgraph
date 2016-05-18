@@ -1,0 +1,1542 @@
+{
+  "links" : [ {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 36,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 1
+  }, {
+    "source" : 36,
+    "bond" : 1,
+    "target" : 1
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 36,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 37,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 38,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 39,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 40,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 41,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 42,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 43,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 44,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 45,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 45,
+    "bond" : 1,
+    "target" : 1
+  }, {
+    "source" : 45,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 46,
+    "bond" : 1,
+    "target" : 2
+  }, {
+    "source" : 47,
+    "bond" : 1,
+    "target" : 0
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 48,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 49,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 50,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 51,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 52,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 54,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 55,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 56,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 56,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 57,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 58,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 6
+  }, {
+    "source" : 59,
+    "bond" : 1,
+    "target" : 6
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 7
+  }, {
+    "source" : 59,
+    "bond" : 1,
+    "target" : 7
+  }, {
+    "source" : 59,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 56,
+    "bond" : 1,
+    "target" : 6
+  }, {
+    "source" : 56,
+    "bond" : 1,
+    "target" : 7
+  }, {
+    "source" : 60,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 61,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 62,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 63,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 64,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 65,
+    "bond" : 1,
+    "target" : 6
+  }, {
+    "source" : 65,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 65,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 66,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 67,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 68,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 69,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 70,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 71,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 72,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 73,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 73,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 73,
+    "bond" : 1,
+    "target" : 4
+  }, {
+    "source" : 74,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 75,
+    "bond" : 1,
+    "target" : 6
+  }, {
+    "source" : 75,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 75,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 76,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 76,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 77,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 78,
+    "bond" : 1,
+    "target" : 6
+  }, {
+    "source" : 78,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 78,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 79,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 80,
+    "bond" : 1,
+    "target" : 5
+  }, {
+    "source" : 80,
+    "bond" : 1,
+    "target" : 3
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 48,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 42,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 12
+  }, {
+    "source" : 82,
+    "bond" : 1,
+    "target" : 12
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 82,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 83,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 83,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 84,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 85,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 86,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 14
+  }, {
+    "source" : 88,
+    "bond" : 1,
+    "target" : 14
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 15
+  }, {
+    "source" : 88,
+    "bond" : 1,
+    "target" : 15
+  }, {
+    "source" : 89,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 89,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 90,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 57,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 91,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 12
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 92,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 92,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 93,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 94,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 95,
+    "bond" : 1,
+    "target" : 14
+  }, {
+    "source" : 95,
+    "bond" : 1,
+    "target" : 15
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 16
+  }, {
+    "source" : 95,
+    "bond" : 1,
+    "target" : 16
+  }, {
+    "source" : 96,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 17
+  }, {
+    "source" : 97,
+    "bond" : 1,
+    "target" : 17
+  }, {
+    "source" : 98,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 18
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 19
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 20
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 21
+  }, {
+    "source" : 99,
+    "bond" : 1,
+    "target" : 14
+  }, {
+    "source" : 99,
+    "bond" : 1,
+    "target" : 15
+  }, {
+    "source" : 99,
+    "bond" : 1,
+    "target" : 16
+  }, {
+    "source" : 100,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 101,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 19
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 20
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 21
+  }, {
+    "source" : 102,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 102,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 103,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 103,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 104,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 105,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 105,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 106,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 107,
+    "bond" : 1,
+    "target" : 12
+  }, {
+    "source" : 107,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 19
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 20
+  }, {
+    "source" : 53,
+    "bond" : 1,
+    "target" : 21
+  }, {
+    "source" : 108,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 109,
+    "bond" : 1,
+    "target" : 21
+  }, {
+    "source" : 110,
+    "bond" : 1,
+    "target" : 13
+  }, {
+    "source" : 56,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 111,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 112,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 22
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 22
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 23
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 23
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 22
+  }, {
+    "source" : 87,
+    "bond" : 1,
+    "target" : 23
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 24
+  }, {
+    "source" : 113,
+    "bond" : 1,
+    "target" : 24
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 25
+  }, {
+    "source" : 114,
+    "bond" : 1,
+    "target" : 25
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 26
+  }, {
+    "source" : 114,
+    "bond" : 1,
+    "target" : 26
+  }, {
+    "source" : 91,
+    "bond" : 1,
+    "target" : 24
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 27
+  }, {
+    "source" : 91,
+    "bond" : 1,
+    "target" : 27
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 28
+  }, {
+    "source" : 91,
+    "bond" : 1,
+    "target" : 28
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 29
+  }, {
+    "source" : 91,
+    "bond" : 1,
+    "target" : 29
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 30
+  }, {
+    "source" : 91,
+    "bond" : 1,
+    "target" : 30
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 31
+  }, {
+    "source" : 91,
+    "bond" : 1,
+    "target" : 31
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 32
+  }, {
+    "source" : 115,
+    "bond" : 1,
+    "target" : 32
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 33
+  }, {
+    "source" : 115,
+    "bond" : 1,
+    "target" : 33
+  }, {
+    "source" : 35,
+    "bond" : 1,
+    "target" : 34
+  }, {
+    "source" : 115,
+    "bond" : 1,
+    "target" : 34
+  }, {
+    "source" : 116,
+    "bond" : 1,
+    "target" : 32
+  }, {
+    "source" : 116,
+    "bond" : 1,
+    "target" : 33
+  }, {
+    "source" : 116,
+    "bond" : 1,
+    "target" : 34
+  }, {
+    "source" : 117,
+    "bond" : 1,
+    "target" : 22
+  }, {
+    "source" : 118,
+    "bond" : 1,
+    "target" : 26
+  }, {
+    "source" : 119,
+    "bond" : 1,
+    "target" : 26
+  }, {
+    "source" : 119,
+    "bond" : 1,
+    "target" : 25
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 24
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 27
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 28
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 29
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 30
+  }, {
+    "source" : 81,
+    "bond" : 1,
+    "target" : 31
+  }, {
+    "source" : 120,
+    "bond" : 1,
+    "target" : 25
+  }, {
+    "source" : 121,
+    "bond" : 1,
+    "target" : 24
+  }, {
+    "source" : 122,
+    "bond" : 1,
+    "target" : 22
+  }, {
+    "source" : 123,
+    "bond" : 1,
+    "target" : 22
+  }, {
+    "source" : 124,
+    "bond" : 1,
+    "target" : 26
+  } ],
+  "nodes" : [ {
+    "atom" : "Aurélien Max",
+    "size" : 10,
+    "affi" : "LIMSI & Université Paris-Sud 11",
+    "group" : 0,
+    "source" : 0
+  }, {
+    "atom" : "Josep Maria Crego",
+    "size" : 10,
+    "affi" : "LIMSI",
+    "group" : 0,
+    "source" : 1
+  }, {
+    "atom" : "François Yvon",
+    "size" : 10,
+    "affi" : "LIMSI & Université Paris-Sud 11",
+    "group" : 0,
+    "source" : 2
+  }, {
+    "atom" : "Ulrich Heid",
+    "size" : 10,
+    "affi" : "Universität Stuttgart, IMS",
+    "group" : 0,
+    "source" : 3
+  }, {
+    "atom" : "Sabine Schulte im Walde",
+    "size" : 10,
+    "affi" : "University of Stuttgart",
+    "group" : 0,
+    "source" : 4
+  }, {
+    "atom" : "Marion Weller",
+    "size" : 10,
+    "affi" : "Universität Stuttgart, IMS",
+    "group" : 0,
+    "source" : 5
+  }, {
+    "atom" : "Fabienne Fritzinger",
+    "size" : 10,
+    "affi" : "Universität Stuttgart",
+    "group" : 0,
+    "source" : 6
+  }, {
+    "atom" : "Frank Richter",
+    "size" : 10,
+    "affi" : "Universität Tübingen",
+    "group" : 0,
+    "source" : 7
+  }, {
+    "atom" : "Moritz Wittmann",
+    "size" : 10,
+    "affi" : "Universität Stuttgart",
+    "group" : 0,
+    "source" : 8
+  }, {
+    "atom" : "Sara Stymne",
+    "size" : 10,
+    "affi" : "Linkoping University",
+    "group" : 0,
+    "source" : 9
+  }, {
+    "atom" : "Lars Ahrenberg",
+    "size" : 10,
+    "affi" : "Linkoping University",
+    "group" : 0,
+    "source" : 10
+  }, {
+    "atom" : "Hinrich Schütze",
+    "size" : 10,
+    "affi" : "Universität Stuttgart",
+    "group" : 0,
+    "source" : 11
+  }, {
+    "atom" : "Myriam Rakho",
+    "size" : 10,
+    "affi" : "Université Paris-Est",
+    "group" : 0,
+    "source" : 12
+  }, {
+    "atom" : "Matthieu Constant",
+    "size" : 10,
+    "affi" : "Université Paris-Est",
+    "group" : 0,
+    "source" : 13
+  }, {
+    "atom" : "Guiyao Ke",
+    "size" : 10,
+    "affi" : "Université de Bretagne Sud, IRISA",
+    "group" : 0,
+    "source" : 14
+  }, {
+    "atom" : "Pierre-Francois Marteau",
+    "size" : 10,
+    "affi" : "Universite de Bretagne Sud, IRISA",
+    "group" : 0,
+    "source" : 15
+  }, {
+    "atom" : "Gildas Menier",
+    "size" : 10,
+    "affi" : "Université de Bretagne Sud, IRISA",
+    "group" : 0,
+    "source" : 16
+  }, {
+    "atom" : "Angel Genov",
+    "size" : 10,
+    "affi" : "Bulgarian Academy of Sciences",
+    "group" : 0,
+    "source" : 17
+  }, {
+    "atom" : "Georgi Iliev",
+    "size" : 10,
+    "affi" : "Bulgarian Academy of Sciences",
+    "group" : 0,
+    "source" : 18
+  }, {
+    "atom" : "Richard Schwarz",
+    "size" : 10,
+    "affi" : "Universität Stuttgart",
+    "group" : 0,
+    "source" : 19
+  }, {
+    "atom" : "Fabienne Martin",
+    "size" : 10,
+    "affi" : "Universität Stuttgart",
+    "group" : 0,
+    "source" : 20
+  }, {
+    "atom" : "Achim Stein",
+    "size" : 10,
+    "affi" : "Universität Stuttgart",
+    "group" : 0,
+    "source" : 21
+  }, {
+    "atom" : "Maria Holmqvist",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 22
+  }, {
+    "atom" : "Magnus Merkel",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 23
+  }, {
+    "atom" : "Henrik Danielsson",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 24
+  }, {
+    "atom" : "Yu Chen",
+    "size" : 10,
+    "affi" : "DFKI GmbH",
+    "group" : 0,
+    "source" : 25
+  }, {
+    "atom" : "Andreas Eisele",
+    "size" : 10,
+    "affi" : "DFKI GmbH",
+    "group" : 0,
+    "source" : 26
+  }, {
+    "atom" : "Sofia Bremin",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 27
+  }, {
+    "atom" : "Hongzhan Hu",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 28
+  }, {
+    "atom" : "Johanna Karlsson",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 29
+  }, {
+    "atom" : "Anna Prytz Lillkull",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 30
+  }, {
+    "atom" : "Martin Wester",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 31
+  }, {
+    "atom" : "Monica Gavrila",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 32
+  }, {
+    "atom" : "Walther v. Hahn",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 33
+  }, {
+    "atom" : "Cristina Vertan",
+    "size" : 10,
+    "affi" : "NULLAFFI",
+    "group" : 0,
+    "source" : 34
+  }, {
+    "atom" : "europarl",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 90
+  }, {
+    "atom" : "n-code",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 91
+  }, {
+    "atom" : "buckwalter_arabic_morphological_analyzer",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 92
+  }, {
+    "atom" : "ncode",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 93
+  }, {
+    "atom" : "multitrad",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 94
+  }, {
+    "atom" : "corpus_of_naturally-occurring_corrections_and_paraphrases_from_wikipedia's_revision_history",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 95
+  }, {
+    "atom" : "arabic_treebank_(atb)",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 96
+  }, {
+    "atom" : "wikipedia",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 97
+  }, {
+    "atom" : "opensubtitles",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 98
+  }, {
+    "atom" : "wmt12",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 99
+  }, {
+    "atom" : "constrative_lexical_evaluation_of_machine_translation",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 100
+  }, {
+    "atom" : "wapiti",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 101
+  }, {
+    "atom" : "microsoft_video_description_corpus",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 102
+  }, {
+    "atom" : "cross-lingual_relatedness_thesaurus",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 103
+  }, {
+    "atom" : "association_norms",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 104
+  }, {
+    "atom" : "maats",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 105
+  }, {
+    "atom" : "dewac",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 106
+  }, {
+    "atom" : "classyn_text_type-specific_corpora",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 107
+  }, {
+    "atom" : "treetagger",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 108
+  }, {
+    "atom" : "rftagger",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 109
+  }, {
+    "atom" : "fuzzy_v_measure",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 110
+  }, {
+    "atom" : "fspar",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 111
+  }, {
+    "atom" : "babyexp",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 112
+  }, {
+    "atom" : "tnt_tagger",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 113
+  }, {
+    "atom" : "collection_of_newspaper_articles",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 114
+  }, {
+    "atom" : "afrikaans_word_lists",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 115
+  }, {
+    "atom" : "tree_tagger",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 116
+  }, {
+    "atom" : "goldstandard_of_german_morphological_analysis",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 117
+  }, {
+    "atom" : "german_web_corpus_(dewac)",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 118
+  }, {
+    "atom" : "tcf",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 119
+  }, {
+    "atom" : "frankfurter_allgemeine_zeitung_faz",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 120
+  }, {
+    "atom" : "b3db",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 121
+  }, {
+    "atom" : "solr",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 122
+  }, {
+    "atom" : "ctext_tagset_for_afrikaans",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 123
+  }, {
+    "atom" : "germanet",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 124
+  }, {
+    "atom" : "uima",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 125
+  }, {
+    "atom" : "mb-tagger",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 126
+  }, {
+    "atom" : "afrikaans_beeld_corpus",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 127
+  }, {
+    "atom" : "giza++:_training_of_statistical_translation_models",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 128
+  }, {
+    "atom" : "html_and_pdf_text_and_metadata_extractors",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 129
+  }, {
+    "atom" : "german_idiomatic_pnv-triples_in_context_(gipic)",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 130
+  }, {
+    "atom" : "babouk",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 131
+  }, {
+    "atom" : "b3-tool",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 132
+  }, {
+    "atom" : "duden_11___redewendungen:_wörterbuch_der_deutschen_idiomatik",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 133
+  }, {
+    "atom" : "stuttgart_morphology_(smor)",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 134
+  }, {
+    "atom" : "ims-corpus_collection",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 135
+  }, {
+    "atom" : "moses",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 136
+  }, {
+    "atom" : "xip",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 137
+  }, {
+    "atom" : "granska_tagger",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 138
+  }, {
+    "atom" : "alpaco_alignment_editor",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 139
+  }, {
+    "atom" : "cleartk",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 140
+  }, {
+    "atom" : "dela",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 141
+  }, {
+    "atom" : "giza++",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 142
+  }, {
+    "atom" : "elra-m0033",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 143
+  }, {
+    "atom" : "srilm",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 144
+  }, {
+    "atom" : "delaf",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 145
+  }, {
+    "atom" : "smi_remote_eye_tracking_device",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 146
+  }, {
+    "atom" : "the_bilingual_annotator_annotation_analysis_support_tool_(blast)",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 147
+  }, {
+    "atom" : "geonames",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 148
+  }, {
+    "atom" : "multi-domain_sentiment_dataset",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 149
+  }, {
+    "atom" : "tree_tager",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 150
+  }, {
+    "atom" : "corpus_valibel",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 151
+  }, {
+    "atom" : "bulgarian_x-language_parallel_corpus",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 152
+  }, {
+    "atom" : "lglex_3.3",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 153
+  }, {
+    "atom" : "elra_-m0033",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 154
+  }, {
+    "atom" : "linkã¶ping_english-swedish_parallel_treebank_(lines)",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 155
+  }, {
+    "atom" : "machinese_syntax",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 156
+  }, {
+    "atom" : "bleu",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 157
+  }, {
+    "atom" : "grammar_error_ratio",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 158
+  }, {
+    "atom" : "lgtagger",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 159
+  }, {
+    "atom" : "granska",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 160
+  }, {
+    "atom" : "jwpl",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 161
+  }, {
+    "atom" : "unitex",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 162
+  }, {
+    "atom" : "i*link",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 163
+  }, {
+    "atom" : "syntactic_reference_corpus_of_medieval_french_(srcmf)",
+    "size" : 50,
+    "affi" : "LREC 2014",
+    "group" : 1,
+    "source" : 164
+  }, {
+    "atom" : "pom",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 165
+  }, {
+    "atom" : "lines_guidelines",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 166
+  }, {
+    "atom" : "opinionfinder_subjecitivity_lexicon",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 167
+  }, {
+    "atom" : "stockholm-umeå_corpus",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 168
+  }, {
+    "atom" : "multilingual_un_parallel_text_2000—2009_(multiun)",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 169
+  }, {
+    "atom" : "joint_research_centre_jrc-acquis_german-english",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 170
+  }, {
+    "atom" : "euconst",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 171
+  }, {
+    "atom" : "europarl_v.2",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 172
+  }, {
+    "atom" : "english_-_oromo_parallel_corpus",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 173
+  }, {
+    "atom" : "multiun",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 174
+  }, {
+    "atom" : "mandarin_chinese_grammar",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 175
+  }, {
+    "atom" : "kth_extract_corpus_(kthxc)",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 176
+  }, {
+    "atom" : "connexor_machines_syntax",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 177
+  }, {
+    "atom" : "english-swedish_word_alignment_gold_standard",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
+    "source" : 178
+  }, {
+    "atom" : "the_dgt_multilingual_translation_memory_of_the_acquis_communautaire_(dgt-tm)",
+    "size" : 50,
+    "affi" : "LREC2012 2012",
+    "group" : 1,
+    "source" : 179
+  } ]
+}
