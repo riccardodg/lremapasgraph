@@ -158,7 +158,7 @@ public class LremapasgraphService implements Serializable {
      */
     public List<String> getResourcenames() {
         ResultSet res;
-        System.err.println("XXX " + Select2Prepare.__SELECTLISTOFRESOURCES__);
+        //System.err.println("XXX " + Select2Prepare.__SELECTLISTOFRESOURCES__);
         if (resourcenames.isEmpty()) {
             // fill the authors
             try {

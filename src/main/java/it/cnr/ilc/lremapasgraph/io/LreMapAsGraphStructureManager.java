@@ -273,8 +273,8 @@ public class LreMapAsGraphStructureManager {
         setAuthor2Idx(temp_author2Idx); //self.set_dn(DN)
         setAuthor2normaffiliation(temp_author2normaffiliation); //self.set_auth_2affi(A) 
         setResources2year(temp_resource2year); // S
-        System.err.println("SIZE AUTH " + temp_author2Idx.size());
-        System.err.println("SIZE RES " + temp_resource2Idx.size());
+        //System.err.println("SIZE AUTH " + temp_author2Idx.size());
+        //System.err.println("SIZE RES " + temp_resource2Idx.size());
         return result;
     }
     //distinct_resources.csv distinct_a2avr.csv

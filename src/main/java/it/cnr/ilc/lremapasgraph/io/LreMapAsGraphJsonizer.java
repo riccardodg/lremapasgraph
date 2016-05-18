@@ -72,7 +72,7 @@ public class LreMapAsGraphJsonizer {
 
             for (String res : manager.getResources()) {
                 year = temp_resource2year.get(res);
-                System.err.println("XXXXXXX " + res + " - " + year);
+                //System.err.println("XXXXXXX " + res + " - " + year);
                 nodeObjBuilder = Json.createObjectBuilder();
 
                 nodeObjBuilder.add("atom", res);
@@ -153,7 +153,7 @@ public class LreMapAsGraphJsonizer {
             
             for (String a : manager.getAuth()) {
                 affi = temp_author2normaffiliation.get(a);
-                System.err.println("AUTHOR "+a+ " - "+affi+ " "+temp_author2Idx.get(a));
+                //System.err.println("AUTHOR "+a+ " - "+affi+ " "+temp_author2Idx.get(a));
                 nodeObjBuilder = Json.createObjectBuilder();
 
                 nodeObjBuilder.add("atom", a);
@@ -167,7 +167,7 @@ public class LreMapAsGraphJsonizer {
 
             for (String res : manager.getResources()) {
                 year = temp_resource2year.get(res);
-                System.err.println("XXXXXXX " + res + " - " + year+ " "+(temp_resource2Idx.get(res) + j));
+                //System.err.println("XXXXXXX " + res + " - " + year+ " "+(temp_resource2Idx.get(res) + j));
                 nodeObjBuilder = Json.createObjectBuilder();
 
                 nodeObjBuilder.add("atom", res);
@@ -202,7 +202,7 @@ public class LreMapAsGraphJsonizer {
                     linksArrayBuilder.add(linkObjBuilder);
                     check.add(already);
                 } else {
-                    System.err.println("skipped r0 -" + already);
+                    //System.err.println("skipped r0 -" + already);
                 }
                 
                 already = (temp_resource2Idx.get(r1)+j) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
@@ -213,7 +213,7 @@ public class LreMapAsGraphJsonizer {
                     linksArrayBuilder.add(linkObjBuilder);
                     check.add(already);
                 } else {
-                    System.err.println("skipped r1 -" + already);
+                    //System.err.println("skipped r1 -" + already);
                 }
                 
 //                 linkObjBuilder.add("source", (temp_resource2Idx.get(r0)+j));

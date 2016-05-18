@@ -534,7 +534,7 @@ public class LremapasgraphManagedBeanView {
         String oldLog = getTheLog();
         theLog = oldLog + "\n" + theLog;
         this.theLog = theLog;
-        System.err.println("theLog " + theLog);
+        //System.err.println("theLog " + theLog);
 
     }
 

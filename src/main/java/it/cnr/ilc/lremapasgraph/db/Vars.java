@@ -11,7 +11,7 @@ package it.cnr.ilc.lremapasgraph.db;
  */
 public class Vars {
     public static String __DIR__ = "/tmp";
-    public static String __OUTDIR__ = "/var/www/clic";
+    public static String __OUTDIR__ = "/var/www/html/clic";
     public static String __SEP__ = "/";
     public static String __SEPTAB__ = "\t";
     public static String __SEPHASHTAG__ = "#";
