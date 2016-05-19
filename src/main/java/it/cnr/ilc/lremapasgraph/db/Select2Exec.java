@@ -334,7 +334,7 @@ public class Select2Exec {
     public static final String __SELECTARG6_SHARED_BASE_PART1__ = "SELECT distinct "
             //+ "trim(lower(replace(A.resourcename,'\n',' '))) as resname, "
             + "A.resourcename as resname,"
-            + "CONF_1 "
+            + "concat(A.CONF_1,' ', A.YEAR_1) "
             + "FROM  " + __TABA2AVR__ + " A, "
             + __TABAFFI1__ + ", "
             + __TABAFFI2__
@@ -351,7 +351,7 @@ public class Select2Exec {
     public static final String __SELECTARG6_SHARED_BASE_PART2__ = "SELECT distinct "
             //+ "trim(lower(replace(A.resourcename,'\n',' '))) as resname, "
             + "A.resourcename as resname,"
-            + "CONF_1 "
+            + "concat(A.CONF_1,' ', A.YEAR_1) "
             + "FROM  " + __TABA2AVR__ + " A, "
             + __TABAFFI1__ + ", "
             + __TABAFFI2__
@@ -368,7 +368,7 @@ public class Select2Exec {
     public static final String __SELECTARG6_SHARED_FAM_PART1__ = "SELECT distinct "
             //+ "trim(lower(replace(A.resourcename,'\n',' '))) as resname, "
             + "A.resourcename as resname,"
-            + "CONF_1 "
+            + "concat(A.CONF_1,' ', A.YEAR_1) "
             + "FROM     " + __TABA2AVR__ + " A, "
             + __TABFAMILY__ + ", "
             + __TABAFFI1__ + ", "
@@ -378,7 +378,7 @@ public class Select2Exec {
             + "AND A.YEAR_1 = AF1.year "
             + "AND LOWER(A.affiliation_2) = AF2.affiliation "
             + "AND A.YEAR_2 = AF2.year  "
-           // + "AND lower(C.name)=lower(A.resourcename) "
+            // + "AND lower(C.name)=lower(A.resourcename) "
             + "AND C.name=A.resourcename "
             + "AND C.CONF=A.CONF_1 and C.YEAR=A.YEAR_1 ";
 
@@ -388,7 +388,7 @@ public class Select2Exec {
     public static final String __SELECTARG6_SHARED_FAM_PART2__ = "SELECT distinct "
             //+ "trim(lower(replace(A.resourcename,'\n',' '))) as resname, "
             + "A.resourcename as resname,"
-            + "CONF_1 "
+            + "concat(A.CONF_1,' ', A.YEAR_1) "
             + "FROM     " + __TABA2AVR__ + " A, "
             + __TABFAMILY__ + ", "
             + __TABAFFI1__ + ", "

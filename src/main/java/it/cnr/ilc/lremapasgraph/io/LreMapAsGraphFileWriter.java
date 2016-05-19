@@ -88,9 +88,9 @@ public class LreMapAsGraphFileWriter {
                 output.close();
             }
             try {
-                System.err.println("prima");
+                //System.err.println("prima");
                 Thread.sleep(3000);
-                System.err.println("dopo");
+                //System.err.println("dopo");
             } catch (Exception r) {
             }
         }

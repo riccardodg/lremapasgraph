@@ -34,5 +34,15 @@ public class Vars {
     public static final String __ORDERBYCOUNTARG3__ = " ORDER BY 4 DESC; ";
     public static String __OK__="Structure created";
     public static String __KO__="Error in Structure";
+    public static String __THETITLE__ = "Author-Author Connection(s) through same used resource(s)";
+    public static String __THEALTTITLE__ = "Resource-Resource Connection(s) through shared author(s)";
+    
+    public static String __AUTHTTT__ = "Type 3 characters to get the name of the author";
+    public static String __RESTTT__ = "Type 3 characters in lower case to get the name of the resource";
+    public static String __TYPETTT__ = "Pick from the LreMap list of resource types";
+    public static String __FAMILYTTT__ = "Pick from the LreMap pre-created resource lists";
+    public static String __CONFYEARTTT__ = "Pick from the LreMap list of conferences";
+    public static String __VISTTT__ = "Select the connections You want to display: Author-Author or Resource-Resource";
+    
     
 }

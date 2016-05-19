@@ -64,7 +64,12 @@ public class LreMapAsGraphJsonizer {
                 nodeObjBuilder.add("atom", a);
                 nodeObjBuilder.add("size", 10);
                 nodeObjBuilder.add("affi", affi);
-                nodeObjBuilder.add("group", 0);
+                if (a.equals(manager.getTheAuthor())) {
+                    nodeObjBuilder.add("group", 2);
+                    //System.out.println("--- "+a);
+                } else {
+                    nodeObjBuilder.add("group", 0);
+                }
                 nodeObjBuilder.add("source", temp_author2Idx.get(a));
                 nodesArrayBuilder.add(nodeObjBuilder);
 
@@ -117,7 +122,7 @@ public class LreMapAsGraphJsonizer {
 
         return obj;
     }
-    
+
     public JsonObject readResourceR2RFilesAndPrepareJsonStructure(LreMapAsGraphStructureManager manager, List<String> distinct_r2rva_arg1) {
         List<String> check = new ArrayList<String>();
         String already = "";
@@ -125,7 +130,7 @@ public class LreMapAsGraphJsonizer {
         int j = manager.getAuth().size();
         int bond = 1;
         String result = Vars.__OK__;
-        String r0 = "", r1 = "", affi = "", year0 = "", author = "",year1 = "",year="";
+        String r0 = "", r1 = "", affi = "", year0 = "", author = "", year1 = "", year = "";
         HashMap<String, Integer> temp_resource2Idx = new HashMap<String, Integer>();
         HashMap<String, Integer> temp_author2Idx = new HashMap<String, Integer>();
 
@@ -149,8 +154,7 @@ public class LreMapAsGraphJsonizer {
         JsonObject obj = null;
 
         try {
-            
-            
+
             for (String a : manager.getAuth()) {
                 affi = temp_author2normaffiliation.get(a);
                 //System.err.println("AUTHOR "+a+ " - "+affi+ " "+temp_author2Idx.get(a));
@@ -160,6 +164,7 @@ public class LreMapAsGraphJsonizer {
                 nodeObjBuilder.add("size", 10);
                 nodeObjBuilder.add("affi", affi);
                 nodeObjBuilder.add("group", 0);
+                
                 nodeObjBuilder.add("source", temp_author2Idx.get(a));
                 nodesArrayBuilder.add(nodeObjBuilder);
 
@@ -189,14 +194,14 @@ public class LreMapAsGraphJsonizer {
 
                 r1 = s.split(Vars.__SEPTAB__)[4].trim(); // r_2 
                 r1 = cleaner(r1);
-                
+
                 year1 = s.split(Vars.__SEPTAB__)[5].trim(); // r_1 
 
                 linkObjBuilder = Json.createObjectBuilder();
 
-                already = (temp_resource2Idx.get(r0)+j) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
+                already = (temp_resource2Idx.get(r0) + j) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
                 if (!check.contains(already)) {
-                    linkObjBuilder.add("source", (temp_resource2Idx.get(r0)+j));
+                    linkObjBuilder.add("source", (temp_resource2Idx.get(r0) + j));
                     linkObjBuilder.add("bond", bond);
                     linkObjBuilder.add("target", temp_author2Idx.get(author));
                     linksArrayBuilder.add(linkObjBuilder);
@@ -204,10 +209,10 @@ public class LreMapAsGraphJsonizer {
                 } else {
                     //System.err.println("skipped r0 -" + already);
                 }
-                
-                already = (temp_resource2Idx.get(r1)+j) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
+
+                already = (temp_resource2Idx.get(r1) + j) + Vars.__SEPHASHTAG__ + (temp_author2Idx.get(author)) + Vars.__SEPHASHTAG__ + 1;
                 if (!check.contains(already)) {
-                    linkObjBuilder.add("source", (temp_resource2Idx.get(r1)+j));
+                    linkObjBuilder.add("source", (temp_resource2Idx.get(r1) + j));
                     linkObjBuilder.add("bond", bond);
                     linkObjBuilder.add("target", temp_author2Idx.get(author));
                     linksArrayBuilder.add(linkObjBuilder);
@@ -215,7 +220,7 @@ public class LreMapAsGraphJsonizer {
                 } else {
                     //System.err.println("skipped r1 -" + already);
                 }
-                
+
 //                 linkObjBuilder.add("source", (temp_resource2Idx.get(r0)+j));
 //                    linkObjBuilder.add("bond", bond);
 //                    linkObjBuilder.add("target", temp_author2Idx.get(author));
@@ -226,13 +231,13 @@ public class LreMapAsGraphJsonizer {
 //                    linkObjBuilder.add("target", temp_author2Idx.get(author));
 //                    linksArrayBuilder.add(linkObjBuilder);
             }
-            
-            
+
             graphBuilder.add("links", linksArrayBuilder);
             graphBuilder.add("nodes", nodesArrayBuilder);
             obj = graphBuilder.build();
             //printJson(obj);
         } catch (Exception e) {
+            e.printStackTrace();
             result = Vars.__KO__;
         }
 

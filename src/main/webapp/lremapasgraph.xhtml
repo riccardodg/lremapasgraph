@@ -6,12 +6,12 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
     <head><meta charset="utf-8"/></head>
-    <h:form>
+    <h:form id="form">
         <f:view contentType="text/html">
             <h:head>
                 <f:facet name="first">
                     <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                    <title>LremapAsGraph</title>
+                    <title>The LreMap as Graph</title>
                 </f:facet>
             </h:head>
 
@@ -21,6 +21,7 @@
 
                     <p:layoutUnit position="north" size="180" resizable="true" closable="true" collapsible="true" >
                         <!--                        <p>Filter parameters:</p>-->
+
                         <h:panelGrid columns="12" cellpadding="5" id="display">
                             <p:outputLabel value="Author:" for="selAuthor" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.author}" readonly="true" id="selAuthor"/>
@@ -36,14 +37,15 @@
                             <p:link outcome="output.xhtml" id="extView" value="External Viewer" target="_blank"/>
 
                         </h:panelGrid>
+
                         <p:separator></p:separator>
                         <h:panelGrid columns="6" cellpadding="2" id="log">
                             <p:outputLabel value="Data log:" for="tLog" />
-                            <p:inputTextarea id="tLog" rows="3" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog}"/>
+                            <p:inputTextarea id="tLog" rows="2" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog}"/>
                             <p:outputLabel value="File log:" for="fLog" />
-                            <p:inputTextarea id="fLog" rows="3" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4File}"/>
+                            <p:inputTextarea id="fLog" rows="2" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4File}"/>
                             <p:outputLabel value="Structure log:" for="sLog" />
-                            <p:inputTextarea id="sLog" rows="3" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4Structure}"/>
+                            <p:inputTextarea id="sLog" rows="2" cols="55" readonly="true" autoResize="false" value="#{lremapasgraphManagedBeanView.theLog4Structure}"/>
 
                         </h:panelGrid>
 
@@ -54,84 +56,93 @@
 
                     </p:layoutUnit>
 
-                    <p:layoutUnit position="west" size="450" header="Filter parameters" collapsible="true">
-                        <h3 style="margin-top:0">Select your visualization</h3>
-                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                            <p:outputLabel for="vis" value="Visualization:" />
-                            <p:selectOneRadio id="vis" value="#{lremapasgraphManagedBeanView.vis}">
-                                <f:selectItem itemLabel="Author 2 Author Connection via Resource" itemValue="a2avr"/>
-                                <f:selectItem itemLabel="Resource 2 Resource Connection via Author" itemValue="r2rva" />
-                            </p:selectOneRadio>
-                        </h:panelGrid>
-                        <h:panelGrid columns="2" cellpadding="5">
+                    <p:layoutUnit position="west" size="650" collapsible="true">
+                        <p:panel id="panel" header="Filter parameters" style="margin-bottom:0px; width: 650px;">
+                            <!--                        <h3 style="margin-top:0">Select your visualization</h3>-->
+                            <h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+                                <p:outputLabel for="vis" value="Visualization:" id="lblVis"/>
+                                <p:selectOneRadio id="vis" value="#{lremapasgraphManagedBeanView.vis}">
+                                    <f:selectItem itemLabel="Author 2 Author Connection via Resource" itemValue="a2avr"/>
+                                    <f:selectItem itemLabel="Resource 2 Resource Connection via Author" itemValue="r2rva" />
+                                </p:selectOneRadio>
+                                <p:tooltip id="toolTipFadeV" for="vis lblVis" value="#{lremapasgraphManagedBeanView.visttt}" trackMouse="true" />
+                            </h:panelGrid>
+                            
+                            <h:panelGrid columns="3" cellpadding="5">
+                                <p:outputLabel value="Author:" for="acAuthor" id="lblAuthor"/>
+                                <p:autoComplete id="acAuthor" value="#{lremapasgraphManagedBeanView.author}"  
+                                                style="width:320px" 
+                                                completeMethod="#{lremapasgraphManagedBeanView.completeAuthors}" 
+                                                minQueryLength="3" 
+                                                autocomplete="true" forceSelection="true" size="30"
+                                                placeholder='Type 3 chars to start autocompletion'/>
+                                <p:tooltip id="toolTipFadeA" for="acAuthor lblAuthor" value="#{lremapasgraphManagedBeanView.authttt}" trackMouse="true" />
 
+                                <p:separator></p:separator><p:separator></p:separator><p:separator></p:separator>
 
-                            <p:outputLabel value="Author:" for="acAuthor" />
-                            <p:autoComplete id="acAuthor" value="#{lremapasgraphManagedBeanView.author}"  
-                                            style="width:320px" 
-                                            completeMethod="#{lremapasgraphManagedBeanView.completeAuthors}" 
-                                            minQueryLength="3" 
-                                            autocomplete="true" forceSelection="true" size="30"
-                                            placeholder='Type 3 chars to start autocompletion'/>
-                            <p:separator></p:separator><p:separator></p:separator>
+                                <p:outputLabel value="Resource:" for="acName" id="lblName"/>
+                                <p:autoComplete id="acName" value="#{lremapasgraphManagedBeanView.name}"  
+                                                style="width:320px" 
+                                                completeMethod="#{lremapasgraphManagedBeanView.completeNames}" 
+                                                minQueryLength="3" 
+                                                autocomplete="true" forceSelection="true" size="30"
+                                                placeholder='Type 3 chars to start autocompletion'/>
+                                <p:tooltip id="toolTipFadeR" for="acName lblName" value="#{lremapasgraphManagedBeanView.namettt}" trackMouse="true" />
 
-                            <p:outputLabel value="Resource:" for="acName" />
-                            <p:autoComplete id="acName" value="#{lremapasgraphManagedBeanView.name}"  
-                                            style="width:320px" 
-                                            completeMethod="#{lremapasgraphManagedBeanView.completeNames}" 
-                                            minQueryLength="3" 
-                                            autocomplete="true" forceSelection="true" size="30"
-                                            placeholder='Type 3 chars to start autocompletion'/>
-                            <p:separator></p:separator><p:separator></p:separator>
-                            <p:outputLabel for="acFamily" value="Family:" />
+                                <p:separator></p:separator><p:separator></p:separator><p:separator></p:separator>
 
+                                <p:outputLabel for="acFamily" value="Resource lists:" id="lblFamily"/>
+                                <p:selectOneMenu id="acFamily" value="#{lremapasgraphManagedBeanView.family}" style="width:320px" filter="true" filterMatchMode="contains" >
+                                    <f:selectItem itemLabel="Select a Family" itemValue="" noSelectionOption="true" />
+                                    <f:selectItems value="#{lremapasgraphManagedBeanView.families}" />
+                                </p:selectOneMenu>
+                                <p:tooltip id="toolTipFadeF" for="acFamily lblFamily" value="#{lremapasgraphManagedBeanView.famttt}" trackMouse="true"  />
 
-                            <p:selectOneMenu id="acFamily" value="#{lremapasgraphManagedBeanView.family}" style="width:320px" filter="true" filterMatchMode="contains" >
-                                <f:selectItem itemLabel="Select a Family" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{lremapasgraphManagedBeanView.families}" />
-                            </p:selectOneMenu>
+                                <p:separator></p:separator><p:separator></p:separator><p:separator></p:separator>
 
-                            <p:separator></p:separator><p:separator></p:separator>
-                            <p:outputLabel for="acType" value="Type:" />
+                                <p:outputLabel for="acType" value="Type:" id="lblType"/>
+                                <p:selectOneMenu id="acType" value="#{lremapasgraphManagedBeanView.type}" style="width:320px" filter="true" filterMatchMode="contains" >
+                                    <f:selectItem itemLabel="Select a Type" itemValue="" noSelectionOption="true" />
+                                    <f:selectItems value="#{lremapasgraphManagedBeanView.types}" />
+                                </p:selectOneMenu>
+                                <p:tooltip id="toolTipFadeT" for="acType lblType" value="#{lremapasgraphManagedBeanView.typettt}" trackMouse="true" />
 
-
-                            <p:selectOneMenu id="acType" value="#{lremapasgraphManagedBeanView.type}" style="width:320px" filter="true" filterMatchMode="contains" >
-                                <f:selectItem itemLabel="Select a Type" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{lremapasgraphManagedBeanView.types}" />
-                            </p:selectOneMenu>
-
-                            <p:separator></p:separator><p:separator></p:separator>
-                            <p:outputLabel for="acCy" value="Conference (year):" />
-
-
-                            <p:selectOneMenu id="acCy" value="#{lremapasgraphManagedBeanView.conf_year}" style="width:320px" filter="true" filterMatchMode="contains" >
-                                <f:selectItem itemLabel="Select a Conference (Year)" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{lremapasgraphManagedBeanView.confs_years}" />
-                            </p:selectOneMenu>
-                        </h:panelGrid>
+                                <p:separator></p:separator><p:separator></p:separator><p:separator></p:separator>
+                                
+                                <p:outputLabel for="acCy" value="Conference (year):" id="lblCy"/>
+                                <p:selectOneMenu id="acCy" value="#{lremapasgraphManagedBeanView.conf_year}" style="width:320px" filter="true" filterMatchMode="contains" >
+                                    <f:selectItem itemLabel="Select a Conference (Year)" itemValue="" noSelectionOption="true" />
+                                    <f:selectItems value="#{lremapasgraphManagedBeanView.confs_years}" />
+                                </p:selectOneMenu>
+                                <p:tooltip id="toolTipFadeC" for="acCy lblCy" value="#{lremapasgraphManagedBeanView.confyearttt}" trackMouse="true" />
+                            </h:panelGrid>
+                        </p:panel>
                         <p:separator />
 
-<!--                        <p:commandButton onstart="PF('loadingDialog').show()" value="Submit" update="display tLog fLog sLog"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}" oncomplete="
-                                         
-                                         var iframe = document.getElementById('graph');
-                                         iframe.src = iframe.src;
-                                         
+
+                        <h:panelGrid columns="2" cellpadding="5">
+
+                            <p:commandButton value="Submit" onstart="PF('loadingDialog').show()" update="tLog fLog sLog display txtVis"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}"  oncomplete="
+
+                                             var iframe = document.getElementById('graph');
+
+                                             iframe.src = iframe.src;
+                                             PF('loadingDialog').hide()
+                                             " style="margin-right:20px;" />
+
+                            <p:commandButton value="Reset Values" update="panel" process="@this" style="margin-right:20px;" >
+                                <p:resetInput target="panel" />
+                            </p:commandButton>
+
+                        </h:panelGrid>
 
 
-                                         "/>-->
-
-                        <p:commandButton value="Submit" onstart="PF('loadingDialog').show()" update="tLog fLog sLog display"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}"  oncomplete="
-                                         
-                                         var iframe = document.getElementById('graph');
-                                         
-                                         iframe.src = iframe.src;
-                                         PF('loadingDialog').hide()
-                                         "/>
 
                     </p:layoutUnit>
 
-                    <p:layoutUnit position="center" >
-                        <iframe src="http://pcdelgratta:8080/lremapasgraph/faces/output.xhtml" width="100%" height="100%" id="graph"></iframe> 
+                    <p:layoutUnit position="center" size="450"  header="Visualization" id="vistitle" >
+                        <p:inputText value="#{lremapasgraphManagedBeanView.theTitle}" id="txtVis"  readonly="true" style="width:1000px;"/>
+                        <iframe src="output.xhtml" width="100%" height="100%" id="graph"></iframe> 
                     </p:layoutUnit>
 
                 </p:layout>

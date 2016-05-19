@@ -73,6 +73,16 @@ public class LreMapAsGraphStructureManager {
     private HashMap<String, String> resources2year = new HashMap<String, String>();
 
     /**
+     * The selected author
+     */
+    private String theAuthor = "";
+
+    /**
+     * The selected resource
+     */
+    private String theResource = "";
+
+    /**
      * Create the association between affiliation as submitted and its
      * normalized value
      *
@@ -93,12 +103,12 @@ public class LreMapAsGraphStructureManager {
                 l1 = s.split(Vars.__SEPTAB__)[1].trim(); // normalized
                 l0 = cleaner(l0);
                 l1 = cleaner(l1);
-
+                
                 temp_affiliation2normaffiliation.put(l0, l1);
                 temp_norm.add(l1);
                 temp_affi.add(l0);
             }
-
+            
             for (String n : temp_norm) {
                 temp_normaffiliation2Idx.put(n, i);
                 i++;
@@ -111,11 +121,11 @@ public class LreMapAsGraphStructureManager {
         setNorm(temp_norm);
         setAffiliation2normaffiliation(temp_affiliation2normaffiliation);
         setNormaffiliation2Idx(temp_normaffiliation2Idx);
-
+        
         return result;
     }
-
-    public String readResourceAndARFilesAndPrepareStructure(List<String> distinct_res_arg4, List<String> a2avr_arg5, List<String> shared_arg6) {
+    
+    public String readResourceAndARFilesAndPrepareStructure(List<String> distinct_res_arg4, List<String> a2avr_arg5, List<String> shared_arg6, String theauthor, String theresource) {
         int i = 0;
         int j = 0;
         String result = Vars.__OK__;
@@ -125,41 +135,54 @@ public class LreMapAsGraphStructureManager {
         List<String> temp_auth = new ArrayList<String>();
         HashMap<String, String> temp_author2normaffiliation = new HashMap<String, String>();
         HashMap<String, String> temp_resource2year = new HashMap<String, String>();
-
+        
         String l0 = "", l1 = "";
         String a0 = "", a1 = "", a00 = "", a11 = "", affi0 = "", affi1 = "", r = "", year = "";
-
+        if (theauthor != null) {
+            theauthor = cleaner(theauthor);
+            setTheAuthor(theauthor);
+        } else {
+            setTheAuthor("");
+        }
+        
+        if (theresource != null) {
+            theresource = cleaner(theresource);
+            setTheResource(theresource);
+        } else {
+            setTheResource("");
+        }
+        
         try {
-
+            
             for (String s : distinct_res_arg4) {
                 l0 = s.split(Vars.__SEPTAB__)[0].trim(); // submitted 
                 l0 = cleaner(l0);
-
+                
                 temp_resource2Idx.put(l0, i);
                 temp_resources.add(l0);
                 i++;
             }
-
+            
             for (String s : shared_arg6) {
                 r = s.split(Vars.__SEPTAB__)[0].trim(); // submitted 
                 r = cleaner(r);
-
+                
                 year = s.split(Vars.__SEPTAB__)[1].trim(); // submitted 
 
                 temp_resource2year.put(r, year);
-
+                
             }
-
+            
             for (String s : a2avr_arg5) {
                 a0 = s.split(Vars.__SEPTAB__)[0].trim(); // author_1 
                 a0 = cleaner(a0);
-
+                
                 affi0 = s.split(Vars.__SEPTAB__)[1].trim(); // affi_1
                 affi0 = cleaner(affi0);
-
+                
                 a1 = s.split(Vars.__SEPTAB__)[3].trim(); // author_1 
                 a1 = cleaner(a1);
-
+                
                 affi1 = s.split(Vars.__SEPTAB__)[4].trim(); // affi_1
                 affi1 = cleaner(affi1);
 //            a00=a0+Vars.__SEPHASHTAG__+affi0;
@@ -177,7 +200,7 @@ public class LreMapAsGraphStructureManager {
                     temp_author2normaffiliation.put(a0, affi0);
                     j++;
                 }
-
+                
                 if (!temp_auth.contains(a1)) {
                     temp_auth.add(a1);
                     temp_author2Idx.put(a1, j);
@@ -185,7 +208,7 @@ public class LreMapAsGraphStructureManager {
                     j++;
                 }
             }
-
+            
         } catch (Exception e) {
             result = Vars.__KO__;
         }
@@ -200,7 +223,7 @@ public class LreMapAsGraphStructureManager {
 
         return result;
     }
-
+    
     public String readResourceR2RFileAndPrepareStructure(List<String> distinct_r2rva_arg1) {
         int i = 0;
         int j = 0;
@@ -211,16 +234,31 @@ public class LreMapAsGraphStructureManager {
         List<String> temp_auth = new ArrayList<String>();
         HashMap<String, String> temp_author2normaffiliation = new HashMap<String, String>();
         HashMap<String, String> temp_resource2year = new HashMap<String, String>();
-
+        
         String r0 = "", r1 = "";
         String author = "", a1 = "", a00 = "", a11 = "", affi = "", r = "", year0 = "", year1 = "";
-
+        
+//        if (theauthor != null) {
+//            theauthor = cleaner(theauthor);
+//            setTheAuthor(theauthor);
+//        } else {
+//            setTheAuthor("");
+//        }
+//        
+//        if (theresource != null) {
+//            theresource = cleaner(theresource);
+//            setTheResource(theresource);
+//        } else {
+//            setTheResource("");
+//        }
+        
         try {
             for (String s : distinct_r2rva_arg1) {
                 r0 = s.split(Vars.__SEPTAB__)[0].trim(); // resourcename_1 
                 r0 = cleaner(r0);
                 year0 = s.split(Vars.__SEPTAB__)[1].trim(); // year_1
                 author = s.split(Vars.__SEPTAB__)[2].trim(); // author
+                //author = cleaner(author);
                 affi = s.split(Vars.__SEPTAB__)[3].trim(); // affi
 
                 r1 = s.split(Vars.__SEPTAB__)[4].trim(); // resourcename_2 
@@ -234,17 +272,17 @@ public class LreMapAsGraphStructureManager {
                     temp_resource2year.put(r0, year0);
                     i++;
                 } else {
-                    //System.err.println("XXXXX R0 SKIPPED " + r0);
+                   // System.err.println("XXXXX R0 SKIPPED " + r0);
 
                 }
-
+                
                 if (!temp_resources.contains(r1)) {
                     temp_resource2Idx.put(r1, i);
                     temp_resources.add(r1);
                     temp_resource2year.put(r1, year1);
                     i++;
                 } else {
-                    //System.err.println("XXXXX R1 SKIPPED " + r1);
+                    System.err.println("XXXXX R1 SKIPPED " + r1);
 
                 }
 
@@ -253,13 +291,13 @@ public class LreMapAsGraphStructureManager {
                     temp_auth.add(author);
                     temp_author2Idx.put(author, j);
                     temp_author2normaffiliation.put(author, affi);
-
+                    
                     j++;
                 } else {
                     //System.err.println("XXXXX R0 SKIPPED " + r0);
 
                 }
-
+                
             }
         } catch (Exception e) {
             result = Vars.__KO__;
@@ -282,7 +320,7 @@ public class LreMapAsGraphStructureManager {
     private String cleaner(String str2clean) {
         String ret = "";
         str2clean = str2clean.replace("\\", "");
-
+        
         str2clean = str2clean.replace(",", "");
         str2clean = str2clean.replace("/", " ");
         str2clean = str2clean.replace(" ", "_");
@@ -430,4 +468,32 @@ public class LreMapAsGraphStructureManager {
         this.resources2year = resources2year;
     }
 
+    /**
+     * @return the theAuthor
+     */
+    public String getTheAuthor() {
+        return theAuthor;
+    }
+
+    /**
+     * @param theAuthor the theAuthor to set
+     */
+    public void setTheAuthor(String theAuthor) {
+        this.theAuthor = theAuthor;
+    }
+
+    /**
+     * @return the theResource
+     */
+    public String getTheResource() {
+        return theResource;
+    }
+
+    /**
+     * @param theResource the theResource to set
+     */
+    public void setTheResource(String theResource) {
+        this.theResource = theResource;
+    }
+    
 }

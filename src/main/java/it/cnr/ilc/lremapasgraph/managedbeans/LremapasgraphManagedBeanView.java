@@ -23,6 +23,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.json.JsonObject;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -54,8 +55,8 @@ public class LremapasgraphManagedBeanView {
 
     private String name;
     private String url;
-    private String type;
-    private String family;
+    private String type = "";
+    private String family = "";
     private String author;
     private String year = "";
     private String conf = "";
@@ -64,6 +65,14 @@ public class LremapasgraphManagedBeanView {
     private String theLog = "";
     private String theLog4File = "";
     private String theLog4Structure = "";
+
+    private String theTitle = Vars.__THETITLE__;
+    private String authttt = Vars.__AUTHTTT__;
+    private String namettt = Vars.__RESTTT__;
+    private String typettt = Vars.__TYPETTT__;
+    private String famttt = Vars.__FAMILYTTT__;
+    private String confyearttt = Vars.__CONFYEARTTT__;
+    private String visttt = Vars.__VISTTT__;
 
     // connection
     Connection conn;
@@ -84,6 +93,18 @@ public class LremapasgraphManagedBeanView {
         setConfs_years(service.getConfs_years());
         setResourcenames(service.getResourcenames());
 
+    }
+
+    public void reset1() {
+        setAuthor(null);
+        setName(null);
+        setFamily("");
+        setType(null);
+        setConf_year("");
+    }
+
+    public void reset() {
+        RequestContext.getCurrentInstance().reset("form:panel");
     }
 
     public void filterAndSearch() {
@@ -118,7 +139,7 @@ public class LremapasgraphManagedBeanView {
         setYear(year);
         setConf(conf);
         //System.err.println("confYear " + confYear);
-        
+
         // set the url
         if ("a2avr".equals(vis)) {
 
@@ -193,14 +214,14 @@ public class LremapasgraphManagedBeanView {
 
 //            ret = manager.readIstiFileAndPrepareStructure(file_distinct_affiliations_arg2);
 //            theLog4Structure = getTheLog4Structure() + "\nfilterAndSearch: readIstiFileAndPrepareStructure() on file " + Vars.__FILE_NAME_ARG2__ + " -" + ret + "- ";
-            ret = manager.readResourceAndARFilesAndPrepareStructure(file_distinct_resources_arg4, file_distinct_a2avr_arg5, file_shared_resources_arg6);
+            ret = manager.readResourceAndARFilesAndPrepareStructure(file_distinct_resources_arg4, file_distinct_a2avr_arg5, file_shared_resources_arg6, author, name);
             theLog4Structure = getTheLog4Structure() + "\nfilterAndSearch: readResourceAndARFilesAndPrepareStructure() on files " + Vars.__FILE_NAME_ARG4__ + " and " + Vars.__FILE_NAME_ARG5__ + " -" + ret + "- ";
 
             //json.setManager(manager);
             obj = json.readResourceAndARFilesAndPrepareJsonStructure(manager, file_distinct_a2avr_arg5);
             try {
                 retfile = LreMapAsGraphFileWriter.CreateAndWriteFileJson(Vars.__FILE_OUT_JSON__, obj);
-                theLog4Structure = getTheLog4File() + "\nfilterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__OUTDIR__+Vars.__SEP__+Vars.__FILE_OUT_JSON__ + "- " + retfile;
+                theLog4Structure = getTheLog4File() + "\nfilterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__OUTDIR__ + Vars.__SEP__ + Vars.__FILE_OUT_JSON__ + "- " + retfile;
 
             } catch (IOException ioe) {
                 theLog4Structure = getTheLog4File() + "\n*****FATAL**** filterAndSearch: LreMapAsGraphFileWriter.CreateAndWriteFileJson -" + Vars.__FILE_OUT_JSON__ + " -" + ioe.getMessage() + "- " + retfile;
@@ -209,6 +230,8 @@ public class LremapasgraphManagedBeanView {
 
         }
         if ("r2rva".equals(vis)) {
+            setTheTitle(Vars.__THEALTTITLE__);
+            //System.err.println("VVVV "+getTheTitle());
             file_distinct_r2rva_arg1 = getFile_distinct_r2rva_arg1();
             theLog = getTheLog() + "\nfilterAndSearch: getFile_distinct_r2rva_arg1() with year -" + getYear() + "- (" + file_distinct_r2rva_arg1.size() + ")";
             try {
@@ -223,7 +246,7 @@ public class LremapasgraphManagedBeanView {
             // structures
             ret = manager.readResourceR2RFileAndPrepareStructure(file_distinct_r2rva_arg1);
             theLog4Structure = getTheLog4Structure() + "\nfilterAndSearch: readResourceR2RFileAndPrepareStructure() on file " + Vars.__FILE_NAME_R2RVA_ARG1__ + " -" + ret + "- ";
-            
+
             //json.setManager(manager);
             obj = json.readResourceR2RFilesAndPrepareJsonStructure(manager, file_distinct_r2rva_arg1);
             try {
@@ -691,5 +714,105 @@ public class LremapasgraphManagedBeanView {
     public void setFile_distinct_r2rva_arg1(List<String> file_distinct_r2rva_arg1) {
         this.file_distinct_r2rva_arg1 = file_distinct_r2rva_arg1;
     }
+
+    /**
+     * @return the theTitle
+     */
+    public String getTheTitle() {
+        return theTitle;
+    }
+
+    /**
+     * @param theTitle the theTitle to set
+     */
+    public void setTheTitle(String theTitle) {
+        this.theTitle = theTitle;
+    }
+
+    /**
+     * @return the authttt
+     */
+    public String getAuthttt() {
+        return authttt;
+    }
+
+    /**
+     * @param authttt the authttt to set
+     */
+    public void setAuthttt(String authttt) {
+        this.authttt = authttt;
+    }
+
+    /**
+     * @return the namettt
+     */
+    public String getNamettt() {
+        return namettt;
+    }
+
+    /**
+     * @param namettt the namettt to set
+     */
+    public void setNamettt(String namettt) {
+        this.namettt = namettt;
+    }
+
+    /**
+     * @return the typettt
+     */
+    public String getTypettt() {
+        return typettt;
+    }
+
+    /**
+     * @param typettt the typettt to set
+     */
+    public void setTypettt(String typettt) {
+        this.typettt = typettt;
+    }
+
+    /**
+     * @return the famttt
+     */
+    public String getFamttt() {
+        return famttt;
+    }
+
+    /**
+     * @param famttt the famttt to set
+     */
+    public void setFamttt(String famttt) {
+        this.famttt = famttt;
+    }
+
+    /**
+     * @return the confyearttt
+     */
+    public String getConfyearttt() {
+        return confyearttt;
+    }
+
+    /**
+     * @param confyearttt the confyearttt to set
+     */
+    public void setConfyearttt(String confyearttt) {
+        this.confyearttt = confyearttt;
+    }
+
+    /**
+     * @return the visttt
+     */
+    public String getVisttt() {
+        return visttt;
+    }
+
+    /**
+     * @param visttt the visttt to set
+     */
+    public void setVisttt(String visttt) {
+        this.visttt = visttt;
+    }
+
+    
 
 }
