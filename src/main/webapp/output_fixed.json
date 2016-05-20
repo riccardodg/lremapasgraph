@@ -1,0 +1,136 @@
+{
+  "links" : [ {
+    "source" : 0,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 0,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 0,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 0,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 1,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 2,
+    "bond" : 1,
+    "target" : 9
+  }, {
+    "source" : 1,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 2,
+    "bond" : 1,
+    "target" : 11
+  }, {
+    "source" : 3,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 4,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 5,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 6,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 7,
+    "bond" : 1,
+    "target" : 8
+  }, {
+    "source" : 1,
+    "bond" : 1,
+    "target" : 10
+  }, {
+    "source" : 2,
+    "bond" : 1,
+    "target" : 10
+  } ],
+  "nodes" : [ {
+    "atom" : "Donald_Duck",
+    "size" : 10,
+    "affi" : "Duckburg",
+    "group" : 2,
+    "source" : 0
+  }, {
+    "atom" : "Uncle_Scrooge",
+    "size" : 10,
+    "affi" : "Duckburg",
+    "group" : 2,
+    "source" : 1
+  }, {
+    "atom" : "Gyro_Gearloose",
+    "size" : 10,
+    "affi" : "Duckburg",
+    "group" : 2,
+    "source" : 2
+  }, {
+    "atom" : "Mickey_Mouse",
+    "size" : 10,
+    "affi" : "Mousetown",
+    "group" : 2,
+    "source" : 3
+  }, {
+    "atom" : "Goofy",
+    "size" : 10,
+    "affi" : "Mousetown",
+    "group" : 2,
+    "source" : 4
+  }, {
+    "atom" : "Wile_E_Coyote",
+    "size" : 10,
+    "affi" : "Merrie_Melodies",
+    "group" : 2,
+    "source" : 5
+  }, {
+    "atom" : "Beep_Beep",
+    "size" : 10,
+    "affi" : "Merrie_Melodies",
+    "group" : 2,
+    "source" : 6
+  }, {
+    "atom" : "Felix_The_cat",
+    "size" : 10,
+    "affi" : "Fifties",
+    "group" : 2,
+    "source" : 7
+  }, {
+    "atom" : "Much_Money_(More_n_More)",
+    "size" : 50,
+    "affi" : "Forties",
+    "group" : 3,
+    "source" : 8
+  }, {
+    "atom" : "Anchorage",
+    "size" : 50,
+    "affi" : "Fifties",
+    "group" : 3,
+    "source" : 9
+  }, {
+    "atom" : "Beagle_Boys",
+    "size" : 50,
+    "affi" : "Forties",
+    "group" : 3,
+    "source" : 10
+  }, {
+    "atom" : "ACME",
+    "size" : 50,
+    "affi" : "Fifties",
+    "group" : 3,
+    "source" : 11
+  } ]
+}

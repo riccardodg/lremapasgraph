@@ -1,220 +1,60 @@
 {
   "links" : [ {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 7,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 8,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 9,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 10,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 11,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 12,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 13,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 4
-  }, {
-    "source" : 6,
+    "source" : 0,
     "bond" : 1,
     "target" : 5
   }, {
-    "source" : 14,
+    "source" : 1,
     "bond" : 1,
-    "target" : 0
+    "target" : 5
   }, {
-    "source" : 15,
+    "source" : 2,
     "bond" : 1,
-    "target" : 1
+    "target" : 5
   }, {
-    "source" : 16,
+    "source" : 3,
     "bond" : 1,
-    "target" : 0
+    "target" : 5
   }, {
-    "source" : 17,
+    "source" : 4,
     "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 18,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 19,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 20,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 21,
-    "bond" : 1,
-    "target" : 0
+    "target" : 5
   } ],
   "nodes" : [ {
-    "atom" : "Monica Monachini",
+    "atom" : "Gabriella_Pardelli",
     "size" : 10,
-    "affi" : "Institute of Computational Linguistics - CNR",
-    "group" : 0,
+    "affi" : "NULLAFFI",
+    "group" : 2,
     "source" : 0
   }, {
-    "atom" : "Riccardo Del Gratta",
+    "atom" : "Manuela_Sassi",
     "size" : 10,
-    "affi" : "ILC-CNR",
+    "affi" : "Affiliation",
     "group" : 0,
     "source" : 1
   }, {
-    "atom" : "Yuri Bizzoni",
+    "atom" : "Stefania_Biagioni",
     "size" : 10,
-    "affi" : "University of Pisa",
+    "affi" : "NULLAFFI",
     "group" : 0,
     "source" : 2
   }, {
-    "atom" : "Federico Boschetti",
+    "atom" : "Carlo_Carlesi",
     "size" : 10,
-    "affi" : "ILC-CNR",
+    "affi" : "NULLAFFI",
     "group" : 0,
     "source" : 3
   }, {
-    "atom" : "Harry Diakoff",
+    "atom" : "Sara_Goggi",
     "size" : 10,
-    "affi" : "Alpheios Project",
+    "affi" : "NULLAFFI",
     "group" : 0,
     "source" : 4
   }, {
-    "atom" : "Gregory Crane",
-    "size" : 10,
-    "affi" : "University of Leipzig",
-    "group" : 0,
+    "atom" : "puma",
+    "size" : 50,
+    "affi" : "LREC2010 2010",
+    "group" : 1,
     "source" : 5
-  }, {
-    "atom" : "ancientgreekwordnet",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 3,
-    "source" : 16
-  }, {
-    "atom" : "imagact",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 17
-  }, {
-    "atom" : "arabic_wordnet",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 18
-  }, {
-    "atom" : "ayda",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 19
-  }, {
-    "atom" : "japanese_wordnet",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 20
-  }, {
-    "atom" : "the_edr_electronic_dictionary",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 21
-  }, {
-    "atom" : "spanish2msl",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 22
-  }, {
-    "atom" : "imagact-italwornet-mapping",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 23
-  }, {
-    "atom" : "italwordnet",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 24
-  }, {
-    "atom" : "department_of_education_text_books",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 25
-  }, {
-    "atom" : "minelex",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 26
-  }, {
-    "atom" : "arabic_wikipedia",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 27
-  }, {
-    "atom" : "wordnet",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 28
-  }, {
-    "atom" : "british_national_corpus_(bnc)_spoken",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 29
-  }, {
-    "atom" : "parole-simple-clips",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 30
-  }, {
-    "atom" : "integrated_reference_corpora_for_spoken_romance_languages_(c-oral-rom)",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 31
   } ]
 }

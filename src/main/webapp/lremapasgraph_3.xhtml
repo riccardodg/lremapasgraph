@@ -22,7 +22,7 @@
                     <p:layoutUnit position="north" size="180" resizable="true" closable="true" collapsible="true" >
                         <!--                        <p>Filter parameters:</p>-->
 
-                        <h:panelGrid columns="10" cellpadding="5" id="display">
+                        <h:panelGrid columns="12" cellpadding="5" id="display">
                             <p:outputLabel value="Author:" for="selAuthor" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.author}" readonly="true" id="selAuthor"/>
                             <p:outputLabel value="Resource:" for="selName" />
@@ -33,7 +33,8 @@
                             <p:inputText value="#{lremapasgraphManagedBeanView.type}" readonly="true" id="selType"/>
                             <p:outputLabel value="Conference (year):" for="selCy" />
                             <p:inputText value="#{lremapasgraphManagedBeanView.conf_year}" readonly="true" id="selCy"/>
-
+                            <p:outputLabel value="View in a new Tab:" for="extView" />
+                            <p:link outcome="output.xhtml" id="extView" value="External Viewer" target="_blank"/>
 
                         </h:panelGrid>
 
@@ -119,25 +120,25 @@
                         <p:separator />
 
 
-                        <h:panelGrid columns="2" cellpadding="5">
+                        <h:panelGrid columns="3" cellpadding="5">
 
                             <p:commandButton value="Submit" onstart="PF('loadingDialog').show()" update="tLog fLog sLog display txtVis"  icon="ui-icon-check" action="#{lremapasgraphManagedBeanView.filterAndSearch()}"  oncomplete="
 
                                              var iframe = document.getElementById('graph');
-                                             var plink=document.getElementById('extView');
 
                                              iframe.src = iframe.src;
-                                             PF('loadingDialog').hide();
-                                             PF('endedDialog').show();
-
-
+                                             PF('loadingDialog').hide()
 
                                              " style="margin-right:20px;" />
+                            <p:commandButton value="View Graph"    oncomplete="PF('showDialog').show();" style="margin-right:20px;" />
 
-                            <p:link outcome="output.xhtml" id="extView" value="View The Graph in a New Tab" target="_blank" disabled="#{lremapasgraphManagedBeanView.linkenabled}"/>
-
-
-
+                            <p:commandButton value="Reset Values" update="panel" process="@this" style="margin-right:20px;" >
+                                <p:resetInput target="panel" />
+                            </p:commandButton>
+                            
+                            <p:commandButton value="Reset Values" update="panel" style="margin-right:20px;" action="#{lremapasgraphManagedBeanView.reset1()}">
+                                <p:resetInput target="panel" />
+                            </p:commandButton>
 
                         </h:panelGrid>
 
@@ -147,7 +148,7 @@
 
                     <p:layoutUnit position="center" size="450"  header="Visualization" id="vistitle" >
                         <p:inputText value="#{lremapasgraphManagedBeanView.theTitle}" id="txtVis"  readonly="true" style="width:1000px;"/>
-                        <iframe src="output_fixed.xhtml" width="80%" height="80%" id="graph"></iframe> 
+                        <iframe src="faces/output.xhtml" width="100%" height="100%" id="graph"></iframe> 
                     </p:layoutUnit>
 
                 </p:layout>
@@ -155,30 +156,13 @@
             </h:body>
 
         </f:view>
-
+        
     </h:form>
-    <p:dialog widgetVar="loadingDialog" styleClass="loadingDialog" modal="true" closable="false" resizable="false" header="...Preraring the Structures...">
+    <p:dialog widgetVar="loadingDialog" styleClass="loadingDialog" modal="true" closable="false" resizable="false">
         <p:outputLabel styleClass="loadingLabel" value="Loading"/>
         <p:graphicImage styleClass="loadingImage" name="waiting.gif"/>
     </p:dialog>
 
-    <p:dialog widgetVar="endedDialog" styleClass="loadingDialog" modal="true" closable="true" resizable="false" header="#{lremapasgraphManagedBeanView.theTitle}">
-        <h:panelGrid columns="3" cellpadding="5">
-            <p:outputLabel styleClass="loadingLabel" value="Graph Created" for ="elink"/>
-            <p:graphicImage styleClass="loadingImage" name="ge.gif" id="elink"/>
-            <p:link outcome="#{lremapasgraphManagedBeanView.url}" id="extView" value="View The Graph in a New Tab" target="_blank" disabled="#{lremapasgraphManagedBeanView.linkenabled}"/>
-        </h:panelGrid>
-    </p:dialog>
-    <p:dialog  width="800" height="800" widgetVar="showDialog" modal="true" closable="true" resizable="true" header="Visualization #{lremapasgraphManagedBeanView.theTitle}">
-        <h:form id="view">
-            <p:scrollPanel mode="native" style="width:80%;height:80%">
-                <ui:include src="output.xhtml"/>
-
-
-            </p:scrollPanel>
-        </h:form>
-    </p:dialog>
-
-
+    
 </html>
 

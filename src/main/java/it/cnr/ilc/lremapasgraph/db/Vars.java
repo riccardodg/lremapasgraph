@@ -43,6 +43,9 @@ public class Vars {
     public static String __FAMILYTTT__ = "Pick from the LreMap pre-created resource lists";
     public static String __CONFYEARTTT__ = "Pick from the LreMap list of conferences";
     public static String __VISTTT__ = "Select the connections You want to display: Author-Author or Resource-Resource";
+    public static String __URL__="output.xhtml";
+    public static String __URLWORKING__="output.xhtml";
+    
     
     
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package it.cnr.ilc.lremapasgraph.managedbeans;
-
+ 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
@@ -65,6 +65,7 @@ public class LremapasgraphManagedBeanView {
     private String theLog = "";
     private String theLog4File = "";
     private String theLog4Structure = "";
+    private boolean linkenabled = false;
 
     private String theTitle = Vars.__THETITLE__;
     private String authttt = Vars.__AUTHTTT__;
@@ -92,14 +93,16 @@ public class LremapasgraphManagedBeanView {
         setTypes(service.getTypes());
         setConfs_years(service.getConfs_years());
         setResourcenames(service.getResourcenames());
+        setUrl(Vars.__URL__);
 
     }
 
     public void reset1() {
-        setAuthor(null);
-        setName(null);
+        System.err.println("vvVV reset" );
+        setAuthor("");
+        setName("");
         setFamily("");
-        setType(null);
+        setType("");
         setConf_year("");
     }
 
@@ -259,6 +262,8 @@ public class LremapasgraphManagedBeanView {
             }
 
         }
+        setLinkenabled(true);
+        setUrl(Vars.__URLWORKING__);
     }
 
     public boolean CreateAndWriteFile(String filename, List<String> list) throws IOException {
@@ -811,6 +816,34 @@ public class LremapasgraphManagedBeanView {
      */
     public void setVisttt(String visttt) {
         this.visttt = visttt;
+    }
+
+    /**
+     * @return the linkenabled
+     */
+    public boolean isLinkenabled() {
+        return linkenabled;
+    }
+
+    /**
+     * @param linkenabled the linkenabled to set
+     */
+    public void setLinkenabled(boolean linkenabled) {
+        this.linkenabled = linkenabled;
+    }
+
+    /**
+     * @return the url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * @param url the url to set
+     */
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     
