@@ -19,6 +19,7 @@ public class Select2Prepare {
     public static final String __TABAFFI2__ = "affiliation AF2 ";
     public static final String __UNION__ = " UNION ";
     public static final String __ORDERBY1ASC__ = " ORDER BY 1 ASC; ";
+    public static final String __ORDERBY2ASC__ = " ORDER BY 2 ASC; ";
     //
 
     // SELECTS
@@ -48,8 +49,8 @@ public class Select2Prepare {
     
     
     // create the list of confs and years (conf (year))
-    public static final String __SELECTLISTOFCONFS_YEARS__ = " SELECT distinct concat(conf,' (',year,')')  as conf_year "
-            + "FROM "+__TAB_R_A__+__ORDERBY1ASC__;
+    public static final String __SELECTLISTOFCONFS_YEARS__ = " SELECT distinct concat(conf,' (',year,')')  as conf_year , year "
+            + "FROM "+__TAB_R_A__+__ORDERBY2ASC__;
     
     // create a list of resourcenames
 //    public static final String __SELECTLISTOFRESOURCES__ = " SELECT distinct A.name as resname "

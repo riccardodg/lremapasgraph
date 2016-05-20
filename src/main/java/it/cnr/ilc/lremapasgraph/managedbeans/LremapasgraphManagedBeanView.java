@@ -244,7 +244,7 @@ public class LremapasgraphManagedBeanView {
             }
 
             // structures
-            ret = manager.readResourceR2RFileAndPrepareStructure(file_distinct_r2rva_arg1);
+            ret = manager.readResourceR2RFileAndPrepareStructure(file_distinct_r2rva_arg1, name);
             theLog4Structure = getTheLog4Structure() + "\nfilterAndSearch: readResourceR2RFileAndPrepareStructure() on file " + Vars.__FILE_NAME_R2RVA_ARG1__ + " -" + ret + "- ";
 
             //json.setManager(manager);

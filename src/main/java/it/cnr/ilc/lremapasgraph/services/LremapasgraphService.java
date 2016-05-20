@@ -47,6 +47,7 @@ public class LremapasgraphService implements Serializable {
      */
     public List<String> getAuthors() {
         ResultSet res;
+        //System.err.println("vvv "+Select2Prepare.__SELECTLISTOFAUTHORS__);
         if (authors.isEmpty()) {
             // fill the authors
             try {
@@ -134,6 +135,7 @@ public class LremapasgraphService implements Serializable {
      */
     public List<String> getConfs_years() {
         ResultSet res;
+        
         if (confs_years.isEmpty()) {
             // fill the authors
             try {

@@ -164,7 +164,7 @@ public class LreMapAsGraphJsonizer {
                 nodeObjBuilder.add("size", 10);
                 nodeObjBuilder.add("affi", affi);
                 nodeObjBuilder.add("group", 0);
-                
+
                 nodeObjBuilder.add("source", temp_author2Idx.get(a));
                 nodesArrayBuilder.add(nodeObjBuilder);
 
@@ -173,12 +173,18 @@ public class LreMapAsGraphJsonizer {
             for (String res : manager.getResources()) {
                 year = temp_resource2year.get(res);
                 //System.err.println("XXXXXXX " + res + " - " + year+ " "+(temp_resource2Idx.get(res) + j));
+                //System.err.println("XXXXXXXA " + manager.getTheResource());
                 nodeObjBuilder = Json.createObjectBuilder();
 
                 nodeObjBuilder.add("atom", res);
                 nodeObjBuilder.add("size", 50);
                 nodeObjBuilder.add("affi", year);
-                nodeObjBuilder.add("group", 1);
+                if (res.equals(manager.getTheResource())) {
+                    nodeObjBuilder.add("group", 3);
+                    //System.err.println("VVV "+res);
+                } else {
+                    nodeObjBuilder.add("group", 1);
+                }
                 nodeObjBuilder.add("source", temp_resource2Idx.get(res) + i);
                 nodesArrayBuilder.add(nodeObjBuilder);
 

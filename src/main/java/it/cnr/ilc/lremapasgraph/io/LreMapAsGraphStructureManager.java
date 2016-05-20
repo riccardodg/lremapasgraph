@@ -224,7 +224,7 @@ public class LreMapAsGraphStructureManager {
         return result;
     }
     
-    public String readResourceR2RFileAndPrepareStructure(List<String> distinct_r2rva_arg1) {
+    public String readResourceR2RFileAndPrepareStructure(List<String> distinct_r2rva_arg1, String theresource) {
         int i = 0;
         int j = 0;
         String result = Vars.__OK__;
@@ -245,12 +245,12 @@ public class LreMapAsGraphStructureManager {
 //            setTheAuthor("");
 //        }
 //        
-//        if (theresource != null) {
-//            theresource = cleaner(theresource);
-//            setTheResource(theresource);
-//        } else {
-//            setTheResource("");
-//        }
+        if (theresource != null) {
+            theresource = cleaner(theresource);
+            setTheResource(theresource);
+        } else {
+            setTheResource("");
+        }
         
         try {
             for (String s : distinct_r2rva_arg1) {
@@ -282,7 +282,7 @@ public class LreMapAsGraphStructureManager {
                     temp_resource2year.put(r1, year1);
                     i++;
                 } else {
-                    System.err.println("XXXXX R1 SKIPPED " + r1);
+                    //System.err.println("IO CANE R1 SKIPPED " + r1);
 
                 }
 
