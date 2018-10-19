@@ -1,338 +1,40 @@
 {
   "links" : [ {
-    "source" : 6,
+    "source" : 1,
     "bond" : 1,
     "target" : 0
   }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 7,
+    "source" : 2,
     "bond" : 1,
     "target" : 0
   }, {
-    "source" : 7,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 8,
+    "source" : 3,
     "bond" : 1,
     "target" : 0
-  }, {
-    "source" : 8,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 9,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 10,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 11,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 12,
-    "bond" : 1,
-    "target" : 0
-  }, {
-    "source" : 12,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 13,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 14,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 15,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 16,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 17,
-    "bond" : 1,
-    "target" : 1
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 16,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 16,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 18,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 4
-  }, {
-    "source" : 19,
-    "bond" : 1,
-    "target" : 4
-  }, {
-    "source" : 20,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 21,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 22,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 9,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 11,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 23,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 13,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 24,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 25,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 26,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 15,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 27,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 27,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 6,
-    "bond" : 1,
-    "target" : 5
-  }, {
-    "source" : 28,
-    "bond" : 1,
-    "target" : 2
-  }, {
-    "source" : 28,
-    "bond" : 1,
-    "target" : 3
-  }, {
-    "source" : 17,
-    "bond" : 1,
-    "target" : 3
   } ],
   "nodes" : [ {
-    "atom" : "Elisabetta Jezek",
+    "atom" : "Nicoletta Calzolari",
     "size" : 10,
-    "affi" : "Affiliation",
+    "affi" : "ILC - CNR, Pisa",
     "group" : 0,
     "source" : 0
-  }, {
-    "atom" : "Valeria Quochi",
-    "size" : 10,
-    "affi" : "NULLAFFI",
-    "group" : 0,
-    "source" : 1
-  }, {
-    "atom" : "Monica Monachini",
-    "size" : 10,
-    "affi" : "Institute of Computational Linguistics - CNR",
-    "group" : 0,
-    "source" : 2
-  }, {
-    "atom" : "Francesca Frontini",
-    "size" : 10,
-    "affi" : "ILC CNR - Pisa Italy",
-    "group" : 0,
-    "source" : 3
-  }, {
-    "atom" : "Jason Utt",
-    "size" : 10,
-    "affi" : "University of Stuttgart",
-    "group" : 0,
-    "source" : 4
-  }, {
-    "atom" : "Sebastian Padó",
-    "size" : 10,
-    "affi" : "IMS - University of Stuttgart",
-    "group" : 0,
-    "source" : 5
-  }, {
-    "atom" : "parole-simple-clips",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 3,
-    "source" : 23
-  }, {
-    "atom" : "asc-it",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 24
-  }, {
-    "atom" : "parole_sottinsieme",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 25
-  }, {
-    "atom" : "imagact-italwornet-mapping",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 26
-  }, {
-    "atom" : "t-pas",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 27
-  }, {
-    "atom" : "dependency_shift_reduce_parser_(desr)",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 28
-  }, {
-    "atom" : "cpa-it_italian_pattern_dictionary",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 29
-  }, {
-    "atom" : "italwordnet",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 30
-  }, {
-    "atom" : "it-panacea_scf_test_suite",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 31
-  }, {
-    "atom" : "freeling",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 32
-  }, {
-    "atom" : "imagact",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 33
-  }, {
-    "atom" : "converter_freeling_2_desr",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 34
-  }, {
-    "atom" : "arabic_wordnet",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 35
-  }, {
-    "atom" : "fuzzy_v_measure",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 36
-  }, {
-    "atom" : "opener-sentiment-lexicons",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 37
   }, {
     "atom" : "japanese_wordnet",
     "size" : 50,
     "affi" : "LREC2010 2010",
     "group" : 1,
-    "source" : 38
+    "source" : 3
   }, {
     "atom" : "the_edr_electronic_dictionary",
     "size" : 50,
     "affi" : "LREC2010 2010",
     "group" : 1,
-    "source" : 39
-  }, {
-    "atom" : "ancientgreekwordnet",
-    "size" : 50,
-    "affi" : "LREC 2014",
-    "group" : 1,
-    "source" : 40
-  }, {
-    "atom" : "minelex",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 41
-  }, {
-    "atom" : "arabic_wikipedia",
-    "size" : 50,
-    "affi" : "LREC2010 2010",
-    "group" : 1,
-    "source" : 42
+    "source" : 4
   }, {
     "atom" : "wordnet",
     "size" : 50,
     "affi" : "LREC2010 2010",
     "group" : 1,
-    "source" : 43
-  }, {
-    "atom" : "british_national_corpus_(bnc)_spoken",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 44
-  }, {
-    "atom" : "integrated_reference_corpora_for_spoken_romance_languages_(c-oral-rom)",
-    "size" : 50,
-    "affi" : "LREC2012 2012",
-    "group" : 1,
-    "source" : 45
+    "source" : 5
   } ]
 }
